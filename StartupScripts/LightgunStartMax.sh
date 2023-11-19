@@ -1,0 +1,5 @@
+#!/bin/sh
+cd /home/alarm/Lightgun
+sudo ./LightgunDriver joystick mediumresource &
+disown
+return
