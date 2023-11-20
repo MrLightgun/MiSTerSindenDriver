@@ -5,4 +5,4 @@ sudo wget https://github.com/MrLightgun/MiSTerSindenDriver/archive/refs/heads/ma
 sudo unzip main.zip
 cd /home/alarm/Lightgun/MiSTerSindenDriver-main
 sudo chmod +x *.sh
-./install.sh
+./Setup_MrFusion.sh
