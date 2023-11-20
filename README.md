@@ -22,7 +22,7 @@ https://github.com/MOnSieurFPGA/MOnSieurFPGA-SD_Image_Builds
 
 I am going to assume user has set this up and can get MiSTer working.
 
-Connect to MiSTer over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb).
+Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb).
 
 #Download Sinden files
 sudo mkdir /home/alarm/Lightgun
