@@ -82,7 +82,21 @@ I find scrolling through Periphery tends to kick the lightgun into life, you sho
 You can turn the crosshair off but it is useful when learning and testing.
 
 
+So far these are the working cores with a couple of highlights:
+NES_Sinden - Duck Hunt
+PSX_Sinden - Time Crisis, Point Blank
+Genesis_Sinden - T2
+SNES_Sinden - Battle Clash
 
+PSX_Sinden
+Remember to switch to Guncon or Justifier depending on what the original lightgun support was
+Follow similar steps to the NES_Sinden core
+2 Player may work, I have not yet tested, the driver supports 2 Sinden Lightguns
+There is a display setting tweak where the border matches super nicely with the game
+
+Genesis_Sinden
+I found I could only get T2 to work, when I had a joypad also attached.
+When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.
 
 
  
