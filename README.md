@@ -109,6 +109,11 @@ Other cores, maybe some of the computer cores, hopefully a 3DO core would be goo
 Bugs, currently in testing I am having to run this after every reboot for lightgun driver to run:
 
 export LD_LIBRARY_PATH+=$LD_LIBRARY_PATH:/media/fat/Lightgun
+This is solved by adding 
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/fat/Lightgun to the end of /etc/profile
+
+but this doesn't solve the scripts issue below.
 
 Currently scripts are not working, you need to launch with the console and even if they were when running the scripts in the MiSTer menu, you have to press a button on a KB to exit.
 
