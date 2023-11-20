@@ -21,15 +21,15 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib
 
 #copy tweaked kernel
 cd /media/fat/Lightgun/MiSTerSindenDriver-main/Kernel/MiSTerFPGA/MrFusion2.7/
-sudo cp /boot/linux/zImage_dtb /boot/linux/zImage_dtb_backup
-sudo cp zImage_dtb /boot/linux/zImage_dtb
+sudo cp /media/fat/linux/zImage_dtb /media/fat/linux/zImage_dtb_backup
+sudo cp zImage_dtb /media/fat/linux/zImage_dtb
 
 #now update MiSTer to be able to read the Sinden lightgun joystick
 cd /media/fat/Lightgun/MiSTerSindenDriver-main/MiSTerUpdate
-sudo cp /usr/bin/MiSTer /usr/bin/MiSTer_orig
+sudo cp /media/fat/MiSTer /media/fat/MiSTer_orig
 #need to close MiSTer on the front end
 
-sudo cp MiSTer /usr/bin/MiSTer
-sudo chmod u+x /usr/bin/MiSTer
+sudo cp MiSTer /media/fat/MiSTer
+sudo chmod u+x /media/fat/MiSTer
 
 
