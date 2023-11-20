@@ -110,9 +110,8 @@ Saturn core - I think this still requires lightgun support to be added plus a bo
 Other cores, maybe some of the computer cores, hopefully a 3DO core would be good
 
 Bugs, currently in testing I am having to run this after every reboot for lightgun driver to run:
-ln -s /media/fat/usr/lib /usr/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/fat/Lightgun
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib
+export LD_LIBRARY_PATH+=$LD_LIBRARY_PATH:/media/fat/Lightgun
+
 
 When running the scripts in the MiSTer menu, you have to press a button on a KB to exit
 
