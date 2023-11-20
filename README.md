@@ -115,9 +115,13 @@ You can turn the crosshair off but it is useful when learning and testing.
 
 So far these are the working cores with a couple of highlights:
 NES_Sinden - Duck Hunt
+
 PSX_Sinden - Time Crisis, Point Blank
+
 Genesis_Sinden - T2
+
 SNES_Sinden - Battle Clash
+
 
 PSX_Sinden
 Remember to switch to Guncon or Justifier depending on what the original lightgun support was
