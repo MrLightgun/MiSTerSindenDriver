@@ -61,11 +61,15 @@ cd ..
 cd ..
 cd ..
 cd MiSTerUpdate
-
 sudo cp /usr/bin/MiSTer /usr/bin/MiSTer_orig
-sudo cp /home/alarm/MiSTer_binary /usr/bin/MiSTer
+#need to close MiSTer on the front end
+
+sudo cp MiSTer /usr/bin/MiSTer
 sudo chmod u+x /usr/bin/MiSTer
-sudo systemctl restart MiSTer
+
+#restart MiSTer
+
+
 
 
 
