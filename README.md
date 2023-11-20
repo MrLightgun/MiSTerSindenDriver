@@ -1,15 +1,19 @@
 # MiSTerSindenDriver
 A repo to for all the files needed to get Sinden Lightgun to work on MiSTer
 
-It is well known that the Sinden Lightgun performs it's video crunching on the target computer device.  This initially looked like it would not be possible to run on the MiSTer as the onboard ARM cpu is quite underpowered and the Linux operating system is barebones.  However I have spent a lot of time developing a low resource driver that can comfortable run on the MiSTer and also removed many required components so it can run on the streamlined Linux OS.
+The Sinden Lightgun is a lightgun controller compatible with modern LCD displays. Unlike other lightguns, the Sinden Lightgun works by processing the data from a video camera onboard the gun. This allows it to work without needing to attach any external IR emitters or other devices to your display. However, processing the camera data into a gun tracking position requires specialized software and a good amount of processing power.
 
-The installation is a too difficult and will hopefully become easier in the future.
+It is well known that the Sinden Lightgun performs it's video crunching on the target computer device.  This initially looked like it would not be possible to run on the MiSTer as the onboard ARM cpu (800Mhz) is quite underpowered and the Linux operating system is barebones.  However I have spent a lot of time developing a low resource driver that can comfortably run on the MiSTer and also removed many required components so it can run on the streamlined Linux OS.
 
-The driver has 3 modes, low resource, medium resource and normal.  It is not recommended to run normal mode on the MiSTer as it takes too many resources and then consequently doesn't perform well.  If you run with the lowresource flag then it will only process video when you pull the trigger.  This makes it very efficient and the driver only takes up 4% of a cpu core.  The performance is acceptable, most 16bit and under games have a slow screen flash so the lightgun plays nicely.  Even games like T2 on the Genesis that need a continuos cursor you can just hold the trigger down.
+The installation quite easy and will hopefully become easier in the future.
 
-If you want a bit more lightgun performance then run mediumresource, this continually crunches video and therefore has a bigger footprint but doesn't interfere with the MiSTer processing.  The lightgun performance is therefore better and the coordinates will be ready when you pull the trigger instead of generating it afterwards.  To save resources it doesn't crunch every video frame.
+The driver has 3 modes, low resource, medium resource and normal.  If you run with the lowresource flag then it will only process video when you pull the trigger.  This makes it very efficient and the driver only takes up 4% of a cpu core.  The performance is acceptable, most 16bit and under games have a slow screen flash so the lightgun plays nicely.  Even games like T2 on the Genesis that need a continuous cursor you can just hold the trigger down.
 
-If you run without the lowresource and mediumresource flag then it just runs normally which still
+If you want a bit more lightgun performance then run mediumresource, this continually crunches video and therefore has a bigger footprint and still doesn't seem to interfere with the MiSTer processing.  The lightgun performance is therefore better and the coordinates will be ready when you pull the trigger instead of generating it afterwards.  To save resources it doesn't crunch every video frame.
+
+If you run without the lowresource and mediumresource flag then it just runs normally which still runs OK but theoretically things like PSX that also need to hit the ARM CPU could be affected.
+
+Overclocking will most likely improve performance but is not required and I haven't actually tested it either.
 
 There will be further improvements with the driver in the future.
 
