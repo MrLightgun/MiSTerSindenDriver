@@ -11,8 +11,9 @@ sudo cp *.sh /MiSTer/scripts
 sudo chmod +x /MiSTer/scripts/*.sh
 
 #copy lightgun driver
-cd /home/alarm/Lightgun/MiSTerSindenDriver-main/StartupScripts
-sudo cp *.* /home/alarm/Lightgun
+cd /home/alarm/Lightgun/MiSTerSindenDriver-main/LightgunDriver
+sudo cp *.* /home/alarm/Lightgun/
+sudo cp lib*.* /usr/lib/
 
 #copy tweaked kernel
 cd /home/alarm/Lightgun/MiSTerSindenDriver-main/Kernel/MOnSieurFPGA/28thFeb2022/
@@ -27,5 +28,10 @@ sudo pkill -f MiSTer
 
 sudo cp MiSTer /usr/bin/MiSTer
 sudo chmod u+x /usr/bin/MiSTer
+
+#assign video/serial permissions so lightgun driver can run without sudo
+sudo usermod -a -G uucp alarm
+sudo usermod -a -G video alarm
+
 
 
