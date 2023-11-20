@@ -1,6 +1,18 @@
 # MiSTerSindenDriver
 A repo to for all the files needed to get Sinden Lightgun to work on MiSTer
 
+It is well known that the Sinden Lightgun performs it's video crunching on the target computer device.  This initially looked like it would not be possible to run on the MiSTer as the onboard ARM cpu is quite underpowered and the Linux operating system is barebones.  However I have spent a lot of time developing a low resource driver that can comfortable run on the MiSTer and also removed many required components so it can run on the streamlined Linux OS.
+
+The installation is a too difficult and will hopefully become easier in the future.
+
+The driver has 3 modes, low resource, medium resource and normal.  It is not recommended to run normal mode on the MiSTer as it takes too many resources and then consequently doesn't perform well.  If you run with the lowresource flag then it will only process video when you pull the trigger.  This makes it very efficient and the driver only takes up 4% of a cpu core.  The performance is acceptable, most 16bit and under games have a slow screen flash so the lightgun plays nicely.  Even games like T2 on the Genesis that need a continuos cursor you can just hold the trigger down.
+
+If you want a bit more lightgun performance then run mediumresource, this continually crunches video and therefore has a bigger footprint but doesn't interfere with the MiSTer processing.  The lightgun performance is therefore better and the coordinates will be ready when you pull the trigger instead of generating it afterwards.  To save resources it doesn't crunch every video frame.
+
+If you run without the lowresource and mediumresource flag then it just runs normally which still
+
+There will be further improvements with the driver in the future.
+
 This guide is recommended for technical people only till we thrash some of the details out
 and create more helpful scripts, docs and other resources.
 
@@ -38,12 +50,18 @@ On the script so that the system can run it, and then run it like this "./Instal
 
 There are multiple steps for getting lightguns to work in MiSTer, if you find the lightgun not working, just make sure you go through all these steps:
 1) Run the lightgun driver, recommed manually running:
+
 /media/fat/Lightgun/./LightgunDriver joystick lowresource
+
+or
+
+/media/fat/Lightgun/./LightgunDriver joystick mediumresource
+
 but you can also run it from the scripts menu on the MiSTer
 (On MOnSieur it would be /home/alarm/Lightgun/./LightgunDriver joystick lowresource)
 Check all the startup messages that there is no errors.
 
-2) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
+3) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
 Scroll through MiSTer settings, go backwards on joypad to System Settings -> Define joystick buttons
 When it says DPAD Test: Press Right, push right on Sinden Lightgun DPad
 Press space bar on kb a couple of times to skip the tilt settings
@@ -57,9 +75,9 @@ Menu OK to pump action
 Skip others
 I don't think this order is essential so you can assign however helps you in the menus
 
-3) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
+4) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
 
-4) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
+5) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
 right, left,down,up
 A to front left
 B to back left
@@ -71,7 +89,7 @@ Use space bar to skip the rest
 Answer No to the question
 Then "Save Settings"
 
-5) Load core specific lightgun settings
+6) Load core specific lightgun settings
 In the NES do Input Options
 Periphery change to Zapper(Joy1) or maybe Zapper(Joy2) if the other doesn't work, might depend on USB order of joypad (if you have) and lightgun
 Zapper Trigger to Joystick
