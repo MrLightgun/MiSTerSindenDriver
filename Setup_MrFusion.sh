@@ -14,8 +14,11 @@ sudo chmod +x /media/fat/scripts/*.sh
 cd /media/fat/Lightgun/MiSTerSindenDriver-main/LightgunDriver
 sudo cp *.* /media/fat/Lightgun/
 sudo cp LightgunDriver /media/fat/Lightgun/LightgunDriver
-mkdir /media/fat/usr/lib
-sudo cp lib* /media/fat/usr/lib/
+cd /media/fat
+sudo mkdir usr
+cd usr
+sudo mkdir lib
+sudo cp /media/fat/Lightgun/lib* /media/fat/usr/lib
 ln -s /media/fat/usr/lib /usr/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/fat/Lightgun
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib
