@@ -24,7 +24,7 @@ cd /media/fat/Lightgun/MiSTerSindenDriver-main/MiSTerUpdate
 sudo cp /usr/bin/MiSTer /usr/bin/MiSTer_orig
 #need to close MiSTer on the front end
 
-#sudo cp MiSTer /usr/bin/MiSTer
-#sudo chmod u+x /usr/bin/MiSTer
+sudo cp MiSTer /usr/bin/MiSTer
+sudo chmod u+x /usr/bin/MiSTer
 
 
