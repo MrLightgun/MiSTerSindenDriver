@@ -20,7 +20,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/fat/Lightgun
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib
 
 #copy tweaked kernel
-cd /media/fat/Lightgun/MiSTerSindenDriver-main/Kernel/MiSTerFPGA\MrFusion2.7/
+cd /media/fat/Lightgun/MiSTerSindenDriver-main/Kernel/MiSTerFPGA/MrFusion2.7/
 sudo cp /boot/linux/zImage_dtb /boot/linux/zImage_dtb_backup
 sudo cp zImage_dtb /boot/linux/zImage_dtb
 
