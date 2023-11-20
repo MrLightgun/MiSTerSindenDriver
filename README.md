@@ -57,12 +57,9 @@ Menu OK to pump action
 Skip others
 I don't think this order is essential so you can assign however helps you in the menus
 
-3) Before a core has been run, hit F10 for calibration
-Point around at your computer screen with white displayed or a window, because there is no border on screen, try to click trigger and just assign some values so the system sees the lightgun and OK.  I'm still not sure if this is required, ideally you want to select the max range on each option.
+3) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
 
-4) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
-
-5) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
+4) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
 right, left,down,up
 A to front left
 B to back left
@@ -74,7 +71,7 @@ Use space bar to skip the rest
 Answer No to the question
 Then "Save Settings"
 
-6) Load core specific lightgun settings
+5) Load core specific lightgun settings
 In the NES do Input Options
 Periphery change to Zapper(Joy1) or maybe Zapper(Joy2) if the other doesn't work, might depend on USB order of joypad (if you have) and lightgun
 Zapper Trigger to Joystick
