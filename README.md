@@ -151,7 +151,7 @@ but this doesn't solve the scripts issue below.
 
 Currently scripts are not working, you need to launch with the console and even if they were when running the scripts in the MiSTer menu, you have to press a button on a KB to exit.
 
-
+This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson who assisted with the development and setup and Wiggy from the Sinden Lightgun Discord who help push to make it happen and assisted with the scripts and testing.
 
  
 
