@@ -34,7 +34,58 @@ Run the Install_MOnSieur.sh script
 
 You can manually type it, or you can copy it onto MiSTer with ftp.  You need to run:
 "chmod +x *.sh"
-On the script so that the system can run it, and then run it like this "./Install_MrFusion.sh"
+On the script so that the system can run it, and then run it like this "./Install_MrFusion.sh" or "./Install_MOnSieur.sh"
+
+There are multiple steps for getting lightguns to work in MiSTer, if you find the lightgun not working, just make sure you go through all these steps:
+1) Run the lightgun driver, recommed manually running:
+/media/fat/Lightgun/./LightgunDriver joystick lowresource
+but you can also run it from the scripts menu on the MiSTer
+(On MOnSieur it would be /home/alarm/Lightgun/./LightgunDriver joystick lowresource)
+Check all the startup messages that there is no errors.
+
+2) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
+Scroll through MiSTer settings, go backwards on joypad to System Settings -> Define joystick buttons
+When it says DPAD Test: Press Right, push right on Sinden Lightgun DPad
+Press space bar on kb a couple of times to skip the tilt settings
+Assign Right/Left/Down/Up to Lightgun dpad
+Assign A + B to left side buttons
+Use KB space bar to skip X,Y,L,R,Select
+Start to front right
+Skip mouse ones with spacebar
+Assign menu to back right
+Menu OK to pump action
+Skip others
+I don't think this order is essential so you can assign however helps you in the menus
+
+3) Before a core has been run, hit F10 for calibration
+Point around at your computer screen with white displayed or a window, because there is no border on screen, try to click trigger and just assign some values so the system sees the lightgun and OK.  I'm still not sure if this is required, ideally you want to select the max range on each option.
+
+4) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
+
+5) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
+right, left,down,up
+A to front left
+B to back left
+Select to back right
+Start to front right
+Use spacebar to skip FDS, Mic
+Assign Zapper/Vaus Btn to the lightgun trigger while pointing at the screen, you may need to trigger twice if you have just loaded the driver
+Use space bar to skip the rest
+Answer No to the question
+Then "Save Settings"
+
+6) Load core specific lightgun settings
+In the NES do Input Options
+Periphery change to Zapper(Joy1) or maybe Zapper(Joy2) if the other doesn't work, might depend on USB order of joypad (if you have) and lightgun
+Zapper Trigger to Joystick
+I find scrolling through Periphery tends to kick the lightgun into life, you should see the crosshair move when you exit the menu
+You can turn the crosshair off but it is useful when learning and testing.
+
+
+
+
+
+ 
 
 
 
