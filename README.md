@@ -22,7 +22,7 @@ https://github.com/MOnSieurFPGA/MOnSieurFPGA-SD_Image_Builds
 
 I am going to assume user has set this up and can get MiSTer working.
 
-Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb).
+Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline and alarm/alarm on MOnSieur.
 
 Before running, you need to kill the MiSTer service.  If you run "top" you will see the running applications.  Make a note of the process id for MiSTer, then exit top with ctrl-c.  Then run "sudo kill xxxx" where xxxx is the process id.  Run this just before you run the Install scripts.
 
