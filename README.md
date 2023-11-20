@@ -13,6 +13,8 @@ If you want a bit more lightgun performance then run mediumresource, this contin
 
 If you run without the lowresource and mediumresource flag then it just runs normally which still runs OK but theoretically things like PSX that also need to hit the ARM CPU could be affected.
 
+The default mode for MiSTer should be lowresource and in discussions and any trouble shooting I will assume this is what is being used.  Having the very small resource footprint is a key part of the MiSTer Sinden Lightgun support. 
+
 Overclocking will most likely improve performance but is not required and I haven't actually tested it either.
 
 There will be further improvements with the driver in the future.
@@ -43,10 +45,10 @@ Connect to MiSTer device over ssh (I like to use putty), or you can load console
 Before running, you need to kill the MiSTer service.  If you run "top" you will see the running applications.  Make a note of the process id for MiSTer, then exit top with ctrl-c.  Then run "sudo kill xxxx" where xxxx is the process id.  Run this just before you run the Install scripts.
 
 Install MiSTer using MrFusion 2.7
-Run the Install_MrFusion.sh script
+Run the Install_MrFusion.sh script from this github.
 
 Install using MOnSieurFPGA Feb 2022 release
-Run the Install_MOnSieur.sh script
+Run the Install_MOnSieur.sh script from this github.
 
 You can manually type it, or you can copy it onto MiSTer with ftp.  You need to run:
 "chmod +x *.sh"
@@ -57,15 +59,19 @@ There are multiple steps for getting lightguns to work in MiSTer, if you find th
 
 /media/fat/Lightgun/./LightgunDriver joystick lowresource
 
-or
+or (medium resource)
 
 /media/fat/Lightgun/./LightgunDriver joystick mediumresource
 
-but you can also run it from the scripts menu on the MiSTer
+or (full resource)
+
+/media/fat/Lightgun/./LightgunDriver joystick
+
+but you can also run it from the scripts menu on the MiSTer (currently not working on the MrFusion build).
 (On MOnSieur it would be /home/alarm/Lightgun/./LightgunDriver joystick lowresource)
 Check all the startup messages that there is no errors.
 
-3) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
+2) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
 Scroll through MiSTer settings, go backwards on joypad to System Settings -> Define joystick buttons
 When it says DPAD Test: Press Right, push right on Sinden Lightgun DPad
 Press space bar on kb a couple of times to skip the tilt settings
@@ -79,9 +85,9 @@ Menu OK to pump action
 Skip others
 I don't think this order is essential so you can assign however helps you in the menus
 
-4) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
+3) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
 
-5) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
+4) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
 right, left,down,up
 A to front left
 B to back left
@@ -93,7 +99,7 @@ Use space bar to skip the rest
 Answer No to the question
 Then "Save Settings"
 
-6) Load core specific lightgun settings
+5) Load core specific lightgun settings
 In the NES do Input Options
 Periphery change to Zapper(Joy1) or maybe Zapper(Joy2) if the other doesn't work, might depend on USB order of joypad (if you have) and lightgun
 Zapper Trigger to Joystick
