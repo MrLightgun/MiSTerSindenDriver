@@ -22,7 +22,13 @@ There will be further improvements with the driver in the future.
 This guide is recommended for technical people only till we thrash some of the details out
 and create more helpful scripts, docs and other resources.
 
-Your Sinden Lightgun needs v1.09 firmware, on windows download the windows v2.05 beta.
+For reference my setup is a MiSTer Multisystem games console as seen here:
+
+https://www.rmcretro.com/videos/a-very-first-look-at-the-mister-multisystem-games-console-vDIz8WY6zLE
+
+I have a generic joypad connected and a keyboard, you can also have the Sinden Lightgun connected throughout the process.
+
+Your Sinden Lightgun needs v1.09 firmware, on Windows download the windows v2.05 beta.
 Update Lightgun with latest firmware.
 Restart Sinden app
 Select lightgun on firmware update tab
