@@ -24,23 +24,37 @@ I am going to assume user has set this up and can get MiSTer working.
 
 Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb).
 
-#Download Sinden files
-sudo mkdir /home/alarm/Lightgun
-cd /home/alarm/Lightgun
-sudo wget https://github.com/MrLightgun/MiSTerSindenDriver/archive/refs/heads/main.zip
-sudo unzip main.zip
-cd /home/alarm/Lightgun/MiSTerSindenDriver-main
-sudo chmod +x install.sh
-
-./install.sh
+#Download Sinden files on MiSTer using MrFusion 2.7
 
 sudo mkdir /media/fat/Lightgun
+
 cd /media/fat/Lightgun
+
 sudo wget https://github.com/MrLightgun/MiSTerSindenDriver/archive/refs/heads/main.zip
+
 sudo unzip main.zip
+
 cd /media/fat/Lightgun/MiSTerSindenDriver-main
 
 ./install2.sh
+
+
+#Download Sinden files on MOnSieurFPGA Feb 2022 release
+
+sudo mkdir /home/alarm/Lightgun
+
+cd /home/alarm/Lightgun
+
+sudo wget https://github.com/MrLightgun/MiSTerSindenDriver/archive/refs/heads/main.zip
+
+sudo unzip main.zip
+
+cd /home/alarm/Lightgun/MiSTerSindenDriver-main
+
+sudo chmod +x *.sh
+
+./install.sh
+
 
 
 
