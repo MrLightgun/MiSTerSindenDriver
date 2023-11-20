@@ -98,6 +98,20 @@ Genesis_Sinden
 I found I could only get T2 to work, when I had a joypad also attached.
 When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.
 
+SNES_Sinden
+Same as the all the above, remember there was Superscope and Justifier too.
+Remember to assign turbo to the lightgun properly as a lot of games need it
+Some games like T2 have a superscope button as a trigger for some strange reason so you may want to switch it, but I prefer the Genesis version anyway.
+
+To come hopefully:
+Sega Master System core - just need to add the border
+SegaCD core - just need to add the border
+Saturn core - I think this still requires lightgun support to be added plus a border
+Other cores, maybe some of the computer cores, hopefully a 3DO core would be good
+
+
+
+
 
  
 
