@@ -20,8 +20,8 @@ cd usr
 sudo mkdir lib
 sudo cp /media/fat/Lightgun/lib* /media/fat/usr/lib
 ln -s /media/fat/usr/lib /usr/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/fat/Lightgun
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib
+export LD_LIBRARY_PATH+=$LD_LIBRARY_PATH:/media/fat/Lightgun
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib
 
 #copy tweaked kernel
 cd /media/fat/Lightgun/MiSTerSindenDriver-main/Kernel/MiSTerFPGA/MrFusion2.7/
