@@ -28,9 +28,11 @@ https://www.rmcretro.com/videos/a-very-first-look-at-the-mister-multisystem-game
 
 I have a generic joypad connected and a keyboard, you can also have the Sinden Lightgun connected throughout the process.
 
-Your Sinden Lightgun needs v1.09 firmware, on Windows download the windows v2.05 beta.
+Your Sinden Lightgun needs v1.09 firmware, on Windows, download the latest windows software from www.sindenlightgun.com
+The latest Sinden software will try to autodetect your lightgun on load, when it has finished click "stop".
+Go to firmware update tab
 Update Lightgun with latest firmware.
-Restart Sinden app
+Restart Sinden software
 Select lightgun on firmware update tab
 Click enable joystick mode and click ok to the prompts.
 Disconnect
@@ -40,20 +42,24 @@ it has been proven to work on these 2 builds:
 
 Install MiSTer using MrFusion 2.7 
 https://github.com/MiSTer-devel/mr-fusion
+Use this version:
+https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.7
 
 or use MOnSieurFPGA Feb 2022 release
 https://github.com/MOnSieurFPGA/MOnSieurFPGA-SD_Image_Builds
 
-I am going to assume user has set this up and can get MiSTer working.
+I am going to assume user has set up a MiSTer before and can get MiSTer working, if you haven't done this, I recommend using MrFusion and following some guides and just getting a general idea how everything works before following this guide.
 
-Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline and alarm/alarm on MOnSieur.
+Find out your MiSTer IP address and note it down.
 
-Before running, you need to kill the MiSTer service.  If you run "top" you will see the running applications.  Make a note of the process id for MiSTer, then exit top with ctrl-c.  Then run "sudo kill xxxx" where xxxx is the process id.  Run this just before you run the Install scripts.
+Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline and alarm/alarm on MOnSieur.  You can either copy the files over or can manually paste the commands.
 
-Install MiSTer using MrFusion 2.7
+Before running, you need to kill the MiSTer service.  I recommend hitting F9 to exit MiSTer to the console, if you run "top" you will see the running applications.  Make a note of the process id for MiSTer, then exit top with ctrl-c.  Then run "sudo kill xxxx" where xxxx is the process id.  Run this just before you run the Install scripts.
+
+If installing MiSTer using MrFusion 2.7:
 Run the Install_MrFusion.sh script from this github.
 
-Install using MOnSieurFPGA Feb 2022 release
+If installing using MOnSieurFPGA Feb 2022 release
 Run the Install_MOnSieur.sh script from this github.
 
 You can manually type it, or you can copy it onto MiSTer with ftp.  You need to run:
@@ -61,19 +67,19 @@ You can manually type it, or you can copy it onto MiSTer with ftp.  You need to 
 On the script so that the system can run it, and then run it like this "./Install_MrFusion.sh" or "./Install_MOnSieur.sh"
 
 There are multiple steps for getting lightguns to work in MiSTer, if you find the lightgun not working, just make sure you go through all these steps:
-1) Run the lightgun driver, recommed manually running:
+1) Run the lightgun driver.
 
-/media/fat/Lightgun/./LightgunDriver joystick lowresource
+Go to scripts on the MiSTer main menu, select "LightgunStart-Default"
 
-or (medium resource)
-
-/media/fat/Lightgun/./LightgunDriver joystick mediumresource
-
-or (full resource)
-
+Or on the console you can manually do:
 /media/fat/Lightgun/./LightgunDriver joystick
 
-but you can also run it from the scripts menu on the MiSTer (currently not working on the MrFusion build).
+or (medium resource)
+/media/fat/Lightgun/./LightgunDriver joystick mediumresource
+
+or (low resource)
+/media/fat/Lightgun/./LightgunDriver joystick lowresource
+
 (On MOnSieur it would be /home/alarm/Lightgun/./LightgunDriver joystick lowresource)
 Check all the startup messages that there is no errors.
 
