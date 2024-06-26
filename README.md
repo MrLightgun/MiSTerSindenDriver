@@ -75,7 +75,7 @@ Reboot MiSTer after it has been successfully run.
 There are multiple steps for getting lightguns to work in MiSTer, if you find the lightgun not working, just make sure you go through all these steps:
 1) Run the lightgun driver.
 
-Go to scripts on the MiSTer main menu, select "LightgunStart-Default"
+Go to scripts on the MiSTer main menu, select "LightgunStart-Default" click a button on your gamepad after it has started up.
 
 Or on the console you can manually do:
 /media/fat/Lightgun/./LightgunDriver joystick
@@ -100,11 +100,11 @@ Assign A + B to left side buttons
 
 Use KB space bar to skip X,Y,L,R,Select
 
-Start to front right
+Start to front right button
 
 Skip mouse ones with spacebar
 
-Assign menu to back right
+Assign menu to back right button
 
 Menu OK to pump action
 
@@ -133,6 +133,9 @@ Zapper Trigger to Joystick
 I find scrolling through Periphery tends to kick the lightgun into life, you should see the crosshair move when you exit the menu
 You can turn the crosshair off but it is useful when learning and testing.
 
+If your border is not showing, clearly because the edges are cut off, change the video settings in the core, it probably changes depending on your resolution and display but I find setting scale to "Wider HV-Integer" helps in most cases.  Having black around the outside of the white border helps lightgun performance anyway.
+
+The part where you do "Define NES buttons" doesn't always save for me, I'm not sure what the trick is, sometimes on a build I restart and it keeps the settings perfectly, other times I have to redo it and it won't save.  Not sure what the trick is.
 
 So far these are the working cores with a couple of highlights:
 NES_Sinden - Duck Hunt
@@ -147,7 +150,7 @@ SNES_Sinden - Battle Clash
 PSX_Sinden
 Remember to switch to Guncon or Justifier depending on what the original lightgun support was
 Follow similar steps to the NES_Sinden core
-2 Player may work, I have not yet tested, the driver supports 2 Sinden Lightguns
+2 Player may work, I have not yet tested, 2 lightguns is definitely working in the driver, you might need to not have a joypad connected for it to work.  Point Blank 2 is a good one for testing.
 There is a display setting tweak where the border matches super nicely with the game
 
 Genesis_Sinden
@@ -161,20 +164,12 @@ Some games like T2 have a superscope button as a trigger for some strange reason
 
 To come hopefully:
 Sega Master System core - just need to add the border
+
 SegaCD core - just need to add the border
+
 Saturn core - I think this still requires lightgun support to be added plus a border
-Other cores, maybe some of the computer cores, hopefully a 3DO core would be good
 
-Bugs, currently in testing I am having to run this after every reboot for lightgun driver to run:
-
-export LD_LIBRARY_PATH+=$LD_LIBRARY_PATH:/media/fat/Lightgun
-This is solved by adding 
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/fat/Lightgun to the end of /etc/profile
-
-but this doesn't solve the scripts issue below.
-
-Currently scripts are not working, you need to launch with the console and even if they were when running the scripts in the MiSTer menu, you have to press a button on a KB to exit.
+Other cores, maybe some of the computer cores, hopefully a future 3DO core would be good
 
 This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson who assisted with the development and setup and Wiggy from the Sinden Lightgun Discord who help push to make it happen and assisted with the scripts and testing.
 
