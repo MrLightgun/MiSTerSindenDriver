@@ -70,6 +70,8 @@ You can manually type it, or you can copy it onto MiSTer with ftp.  You need to 
 "chmod +x *.sh"
 On the script so that the system can run it, and then run it like this "./Install_MrFusion.sh" or "./Install_MOnSieur.sh"
 
+Reboot MiSTer after it has been successfully run.
+
 There are multiple steps for getting lightguns to work in MiSTer, if you find the lightgun not working, just make sure you go through all these steps:
 1) Run the lightgun driver.
 
