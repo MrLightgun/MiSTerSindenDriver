@@ -174,6 +174,7 @@ Other cores, maybe some of the computer cores, hopefully a future 3DO core would
 
 This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson who assisted with the development and setup and Wiggy from the Sinden Lightgun Discord who help push to make it happen and assisted with the scripts and testing.
 
+I've really tidied up the MrFusion version of this guide on 27th June 2024, need to do the same to the MOnSieur guide, so there may be issues with that.
  
 
 
