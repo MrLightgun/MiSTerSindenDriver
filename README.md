@@ -151,7 +151,8 @@ PSX_Sinden
 Remember to switch to Guncon or Justifier depending on what the original lightgun support was
 Follow similar steps to the NES_Sinden core
 2 Player may work, I have not yet tested, 2 lightguns is definitely working in the driver, you might need to not have a joypad connected for it to work.  Point Blank 2 is a good one for testing.
-There is a display setting tweak where the border matches super nicely with the game
+There is a display setting tweak on some monitors/resolution where the border matches super nicely with the outside of the game
+Remember to add a BIOS.
 
 Genesis_Sinden
 I found I could only get T2 to work, when I had a joypad also attached.
