@@ -28,7 +28,8 @@ sudo cp zImage_dtb /media/fat/linux/zImage_dtb
 #now update MiSTer to be able to read the Sinden lightgun joystick
 cd /media/fat/Lightgun/MiSTerSindenDriver-main/MiSTerUpdate
 sudo cp /media/fat/MiSTer /media/fat/MiSTer_orig
-#need to close MiSTer on the front end
+#may need to close MiSTer on the front end
+kill -9 $(pidof MiSTer)
 
 sudo cp MiSTer /media/fat/MiSTer
 sudo chmod u+x /media/fat/MiSTer
