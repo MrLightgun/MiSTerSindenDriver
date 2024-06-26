@@ -44,6 +44,8 @@ https://github.com/MiSTer-devel/mr-fusion
 or use MOnSieurFPGA Feb 2022 release
 https://github.com/MOnSieurFPGA/MOnSieurFPGA-SD_Image_Builds
 
+When the installation is complete you need to replace the kernel which is a zImage_dtb file.  The updated version is in this pack.
+
 I am going to assume user has set this up and can get MiSTer working.
 
 Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline and alarm/alarm on MOnSieur.
