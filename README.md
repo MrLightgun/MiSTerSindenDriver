@@ -50,6 +50,10 @@ https://github.com/MOnSieurFPGA/MOnSieurFPGA-SD_Image_Builds
 
 I am going to assume user has set up a MiSTer before and can get MiSTer working, if you haven't done this, I recommend using MrFusion and following some guides and just getting a general idea how everything works before following this guide.
 
+Your MiSTer needs to be connected to the internet, with ethernet it is the simplest way.
+
+If using MrFusion, Go to Scripts on the main menu and do "Update".  This will add all the cores you need for non-lightgun gaming and includes the folders to put your roms.
+
 Find out your MiSTer IP address and note it down.
 
 Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline and alarm/alarm on MOnSieur.  You can either copy the files over or can manually paste the commands.
@@ -80,7 +84,7 @@ or (medium resource)
 or (low resource)
 /media/fat/Lightgun/./LightgunDriver joystick lowresource
 
-(On MOnSieur it would be /home/alarm/Lightgun/./LightgunDriver joystick lowresource)
+(On MOnSieur it would be /home/alarm/Lightgun/./LightgunDriver joystick )
 Check all the startup messages that there is no errors.
 
 2) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
