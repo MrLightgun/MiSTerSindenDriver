@@ -122,13 +122,12 @@ Then "Save Settings"
 5) Load core specific lightgun settings
 In the NES do Input Options
 Periphery change to Zapper(Joy1) or maybe Zapper(Joy2) if the other doesn't work, might depend on USB order of joypad (if you have) and lightgun
-Zapper Trigger to Joystick
-I find scrolling through Periphery tends to kick the lightgun into life, you should see the crosshair move when you exit the menu
-You can turn the crosshair off but it is useful when learning and testing.
+Zapper Trigger to Joystick.  Remember to use the lightgun dpad as soon as you load the core so it becomes Player1.
+Remember to turn off the crosshair when you have everything setup but it is useful when learning and testing.
 
 If your border is not showing, clearly because the edges are cut off, change the video settings in the core, it probably changes depending on your resolution and display but I find setting scale to "Wider HV-Integer" helps in most cases.  Having black around the outside of the white border helps lightgun performance anyway.
 
-The part where you do "Define NES buttons" doesn't always save for me, I'm not sure what the trick is, sometimes on a build I restart and it keeps the settings perfectly, other times I have to redo it and it won't save.  Not sure what the trick is.
+I find if the lightgun is not the Player1 joystick the part where you do "Define NES buttons" doesn't save for me when I reload the core.
 
 So far these are the working cores with a couple of highlights:
 NES_Sinden - Duck Hunt
@@ -141,15 +140,23 @@ SNES_Sinden - Battle Clash
 
 
 PSX_Sinden
-Remember to switch to Guncon or Justifier depending on what the original lightgun support was
+Remember to use the lightgun dpad when you first load the core.
+Switch to Guncon or Justifier depending on what the original lightgun support was
 Follow similar steps to the NES_Sinden core
 2 Player may work, I have not yet tested, 2 lightguns is definitely working in the driver, you might need to not have a joypad connected for it to work.  Point Blank 2 is a good one for testing.
-There is a display setting tweak on some monitors/resolution where the border matches super nicely with the outside of the game
+If you tweak Fixed HBlank then you can normally get the game window to perfectly match the white border, this helps accuracy. 
 Remember to add a BIOS.
 
 Genesis_Sinden
 I found I could only get T2 to work, when I had a joypad also attached.
-When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.
+Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
+When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.  B and C to the left side buttons and Start and Select to the right side buttons, I don't believe the other buttons are any use.
+Under input, set:
+Swap Joysticks: Yes
+Gun Control: Joy1
+Gun Fire: Joy
+Cross: Small but remember to turn off once everything is setup.
+
 
 SNES_Sinden
 Same as the all the above, remember there was Superscope and Justifier too.
