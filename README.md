@@ -54,7 +54,7 @@ If using MrFusion, Go to Scripts on the main menu and do "Update".  This will ad
 
 Find out your MiSTer IP address from the menu and note it down.
 
-Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline. We want to run the commands in Install_MrFusion.sh script from this github.  You can either copy the commands and paste them into your shell, manually type them in by keyboard, or copy the script over using ftp, then run it.  If you do this you need to make it runnable like this:
+Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline. We want to run the commands in Install_MrFusion.sh script from this github.  You can either copy the commands and paste them into your shell, manually type them in by keyboard, or copy the script over using ftp, then run it.  You can chuck it in /media/fat  if you do this you need to make it runnable like this:
 
 chmod +x Install_MrFusion.sh
 
