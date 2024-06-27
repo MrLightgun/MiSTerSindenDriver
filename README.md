@@ -103,9 +103,10 @@ Skip others
 
 I don't think this order is essential so you can assign however helps you in the menus
 
-4) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
+3) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
+THIS IS IMPORTANT - The MiSTer loads the first joystick used in a core as Player1, so make sure when you first load a core to use the dpad on the lightgun first.  Otherwise if you use your gamepad first then the lightgun will become player2 which can cause problems, for example the settings don't save correctly in the NES core and in PSX you can't play Time Crisis because it wants a Player1 lightgun but Player1 is assigned to the gamepad.
 
-5) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
+4) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
 right, left,down,up
 A to front left
 B to back left
@@ -117,7 +118,7 @@ Use space bar to skip the rest
 Answer No to the question
 Then "Save Settings"
 
-6) Load core specific lightgun settings
+5) Load core specific lightgun settings
 In the NES do Input Options
 Periphery change to Zapper(Joy1) or maybe Zapper(Joy2) if the other doesn't work, might depend on USB order of joypad (if you have) and lightgun
 Zapper Trigger to Joystick
