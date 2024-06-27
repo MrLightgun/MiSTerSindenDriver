@@ -35,6 +35,7 @@ sudo cp MiSTer /media/fat/MiSTer
 sudo chmod u+x /media/fat/MiSTer
 
 #Copy over configs to setup lightgun as joystick correctly on MiSTer menu and in cores
+sudo mkdir /media/fat/config/inputs
 sudo cp /media/fat/Lightgun/MiSTerSindenDriver-main/Config/*.* /media/fat/config
 sudo cp /media/fat/Lightgun/MiSTerSindenDriver-main/Config/inputs/*.* /media/fat/config/inputs
 
