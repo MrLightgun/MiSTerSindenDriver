@@ -13,7 +13,7 @@ If you want a bit more lightgun performance then run mediumresource, this contin
 
 If you run without the lowresource and mediumresource flag then it just runs normally which still runs OK but theoretically things like PSX that also need to hit the ARM CPU could be affected.
 
-The default mode for MiSTer should be lowresource and in discussions and any trouble shooting I will assume this is what is being used.  Having the very small resource footprint is a key part of the MiSTer Sinden Lightgun support. 
+I would recommend medium resource (default) as a good one to start with but use low resource if required.
 
 Overclocking will most likely improve performance but is not required and I haven't actually tested it either.
 
@@ -26,11 +26,12 @@ For reference my setup is a MiSTer Multisystem games console as seen here:
 
 https://www.rmcretro.com/videos/a-very-first-look-at-the-mister-multisystem-games-console-vDIz8WY6zLE
 
-I have a generic joypad connected and a keyboard, you can also have the Sinden Lightgun connected throughout the process.
+I have a generic joypad connected and a keyboard, and the Sinden Lightgun connected throughout the process.
 
 Your Sinden Lightgun needs v1.09 firmware, on Windows, download the latest windows software from www.sindenlightgun.com
 The latest Sinden software will try to autodetect your lightgun on load, when it has finished click "stop".
 Go to firmware update tab
+Select your lightgun from the list on the left.
 Update Lightgun with latest firmware.
 Restart Sinden software
 Select lightgun on firmware update tab
@@ -38,7 +39,7 @@ Click enable joystick mode and click ok to the prompts.
 Disconnect
 
 Recommend using a fresh SD card, the installation should improve over time but at the moment
-it has been proven to work on these 2 builds:
+it has been proven to work on this build:
 
 Install MiSTer using MrFusion 2.7 
 https://github.com/MiSTer-devel/mr-fusion
@@ -49,20 +50,19 @@ I am going to assume user has set up a MiSTer before and can get MiSTer working,
 
 Your MiSTer needs to be connected to the internet, with ethernet it is the simplest way.
 
-If using MrFusion, Go to Scripts on the main menu and do "Update".  This will add all the cores you need for non-lightgun gaming and includes the folders to put your roms.
+If using MrFusion, Go to Scripts on the main menu and do "Update".  This will add all the cores you need for non-lightgun gaming and includes the folders to put your roms.  This can take a while (10 mins?) so leave it to finish.  It will be obvious when it has fully finished.
 
-Find out your MiSTer IP address and note it down.
+Find out your MiSTer IP address from the menu and note it down.
 
-Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which I believe is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline.  You can either copy the files over or can manually paste the commands.
+Connect to MiSTer device over ssh (I like to use putty), or you can load console on the device which is F9 (you need a kb). Username/Pass is root/1 on MiSTer mainline. We want to run the commands in Install_MrFusion.sh script from this github.  You can either copy the commands and paste them into your shell, manually type them in by keyboard, or copy the script over using ftp, then run it.  If you do this you need to make it runnable like this:
+
+chmod +x Install_MrFusion.sh
 
 Before running, you need to kill the MiSTer service.  I recommend hitting F9 to exit MiSTer to the console, if you run "top" you will see the running applications.  Make a note of the process id for MiSTer, then exit top with ctrl-c.  Then run "sudo kill xxxx" where xxxx is the process id.  Run this just before you run the Install scripts.
 
-If installing MiSTer using MrFusion 2.7:
-Run the Install_MrFusion.sh script from this github.
+Now run the Install_MrFusion.sh script:
 
-You can manually type it, or you can copy it onto MiSTer with ftp.  You need to run:
-"chmod +x *.sh"
-On the script so that the system can run it, and then run it like this "./Install_MrFusion.sh"
+./Install_MrFusion.sh
 
 Reboot MiSTer after it has been successfully run.
 
@@ -72,15 +72,18 @@ There are multiple steps for getting lightguns to work in MiSTer, if you find th
 Go to scripts on the MiSTer main menu, select "LightgunStart-Default" click a button on your gamepad after it has started up.
 
 Or on the console you can manually do:
-/media/fat/Lightgun/./LightgunDriver joystick
-
-or (medium resource)
+(medium resource)
 /media/fat/Lightgun/./LightgunDriver joystick mediumresource
 
 or (low resource)
 /media/fat/Lightgun/./LightgunDriver joystick lowresource
 
+or (max resource)
+/media/fat/Lightgun/./LightgunDriver joystick
+
 2) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
+**THIS STEP IS NOW HANDLED BY THE SETUP SCRIPT, THESE NOTES ARE HERE FOR REFERENCE**
+
 Scroll through MiSTer settings, go backwards on joypad to System Settings -> Define joystick buttons
 When it says DPAD Test: Press Right, push right on Sinden Lightgun DPad
 Press space bar on kb a couple of times to skip the tilt settings
@@ -110,6 +113,9 @@ You can now navigate the menus using the lightgun alone.  I don't think you can 
 **THIS IS IMPORTANT** - The MiSTer loads the first joystick used in a core as Player1, so make sure when you first load a core to use the dpad on the lightgun first.  Otherwise if you use your gamepad first then the lightgun will become player2 which can cause problems, for example the settings don't save correctly in the NES core and in PSX you can't play Time Crisis because it wants a Player1 lightgun but Player1 is assigned to the gamepad.
 
 4) Load MiSTer menu, under System, find Define NES buttons, assign these to the lightgun dpad:
+
+**THIS STEP IS NOW HANDLED BY THE SETUP SCRIPT, THESE NOTES ARE HERE FOR REFERENCE**
+
 right, left,down,up
 A to front left
 B to back left
@@ -122,6 +128,9 @@ Answer No to the question
 Then "Save Settings"
 
 5) Load core specific lightgun settings
+
+**THIS STEP IS NOW HANDLED BY THE SETUP SCRIPT, THESE NOTES ARE HERE FOR REFERENCE, BUT YOU MAY WISH TO CHANGE THESE DEFAULT SETTINGS, SUCH AS CROSSHAIR**
+
 In the NES do Input Options
 Periphery change to Zapper(Joy1) or maybe Zapper(Joy2) if the other doesn't work, might depend on USB order of joypad (if you have) and lightgun
 Zapper Trigger to Joystick.  Remember to use the lightgun dpad as soon as you load the core so it becomes Player1.
@@ -131,7 +140,10 @@ If your border is not showing, clearly because the edges are cut off, change the
 
 I find if the lightgun is not the Player1 joystick the part where you do "Define NES buttons" doesn't save for me when I reload the core.
 
+**HOPEFULLY AT THIS POINT THE LIGHTGUN IS WORKING IN DUCK HUNT**
+
 So far these are the working cores with a couple of highlights:
+
 NES_Sinden - Duck Hunt
 
 PSX_Sinden - Time Crisis, Point Blank
@@ -141,14 +153,15 @@ Genesis_Sinden - T2
 SNES_Sinden - Battle Clash
 
 
-PSX_Sinden
+**PSX_Sinden**
+**SOME OF THESE STEPS HAVE BEEN DONE BY THE SETUP SCRIPT**
 Remember to use the lightgun dpad when you first load the core.
 
 The PSX is a slightly more demanding core and when reading sounds and video of the CD you can see slowdown if the lightgun driver is using too much resource so I recommend medium resource for most scenarios but use low resource if you see any problems.
 
 Set Player1 to Guncon or Justifier depending on what the original lightgun support was.
 
-Define the buttons using the lightgun.  The input ones are gun shoot which needs to be trigger.  Gun B which is good for rear left side button and Gun A as front left side button.  I don't think the others are required.
+Define the buttons using the lightgun.  The input ones are "gun shoot" which needs to be trigger.  Gun B which is good for rear left side button and Gun A as front left side button.  I don't think the others are required.
 
 If you tweak Fixed HBlank then you can normally get the game window to perfectly match the white border, this helps accuracy. 
 
@@ -157,7 +170,8 @@ Remember to add a BIOS.
 2 Player does work.  You need to do step 2) for Lightgun2 also.  When you load the PSX core, remember to do dpad on Lightgun1, then dpad on Lightgun2.  Point Blank is a good game for testing 2 Player.  You need to set Player1 and Player2 to GunCon.  If you add a new lightgun probably best to do a hard reboot.  You also need to define buttons for the 2nd Lightgun.  As 2 player uses more resources and Point Blank does a lot of reading off the CD this is probably a good example where you need to use the low resource lightgun driver option.
 
 
-Genesis_Sinden
+**Genesis_Sinden**
+**SOME OF THESE STEPS HAVE BEEN DONE BY THE SETUP SCRIPT**
 I found I could only get T2 to work, when I also had a joypad also attached.
 
 Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
@@ -175,7 +189,9 @@ Gun Fire: Joy
 Cross: Small but remember to turn off once everything is setup.
 
 
-SNES_Sinden
+**SNES_Sinden**
+**SOME OF THESE STEPS HAVE BEEN DONE BY THE SETUP SCRIPT**
+
 Same as the all the above, remember there was Superscope and Justifier too.
 Remember to assign turbo to the lightgun properly as a lot of games need it
 Some games like T2 have a superscope button as a trigger for some strange reason so you may want to switch it, but I prefer the Genesis version anyway.
