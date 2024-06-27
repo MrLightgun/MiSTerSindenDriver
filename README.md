@@ -101,6 +101,8 @@ Menu Back to back right
 
 Skip others
 
+Don't wave the lightgun around while doing the above in case the movement is assigned as actions.
+
 You can now navigate the menus using the lightgun alone.  I don't think you can assign the menu button which in the above example is pump action inside the game, so you may want to change that assignment if you want to use it instead of a side button.
 
 3) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
@@ -143,18 +145,25 @@ PSX_Sinden
 Remember to use the lightgun dpad when you first load the core.
 Switch to Guncon or Justifier depending on what the original lightgun support was
 Follow similar steps to the NES_Sinden core
-2 Player may work, I have not yet tested, 2 lightguns is definitely working in the driver, you might need to not have a joypad connected for it to work.  Point Blank 2 is a good one for testing.
 If you tweak Fixed HBlank then you can normally get the game window to perfectly match the white border, this helps accuracy. 
 Remember to add a BIOS.
+2 Player does work.  You need to do step 2) for Lightgun2 also.  When you load the PSX core, remember to do dpad on Lightgun1, then dpad on Lightgun2.  Point Blank is a good game for testing 2 Player.  You need to set Player1 and Player2 to GunCon.  If you add a new lightgun probably best to do a hard reboot.
+
+
 
 Genesis_Sinden
 I found I could only get T2 to work, when I had a joypad also attached.
 Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
 When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.  B and C to the left side buttons and Start and Select to the right side buttons, I don't believe the other buttons are any use.
+
 Under input, set:
+
 Swap Joysticks: Yes
+
 Gun Control: Joy1
+
 Gun Fire: Joy
+
 Cross: Small but remember to turn off once everything is setup.
 
 
@@ -162,6 +171,16 @@ SNES_Sinden
 Same as the all the above, remember there was Superscope and Justifier too.
 Remember to assign turbo to the lightgun properly as a lot of games need it
 Some games like T2 have a superscope button as a trigger for some strange reason so you may want to switch it, but I prefer the Genesis version anyway.
+Under input set:
+Swap Joysticks: No
+
+Super Scope: Joy1
+
+Super Scope Btn: Joy
+
+Gun Type: Super Scope (or justifier).
+
+
 
 To come hopefully:
 Sega Master System core - just need to add the border
