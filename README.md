@@ -87,21 +87,21 @@ Press space bar on kb a couple of times to skip the tilt settings
 
 Assign Right/Left/Down/Up to Lightgun dpad
 
-Assign A + B to left side buttons
+Use KB space bar to skip A,B,X,Y,L,R,Select
 
-Use KB space bar to skip X,Y,L,R,Select
-
-Start to front right button
+Assign Start to front left button
 
 Skip mouse ones with spacebar
 
-Assign menu to back right button
+Assign menu to Pump Action
 
-Menu OK to pump action
+Menu OK to front right
+
+Menu Back to back right
 
 Skip others
 
-I don't think this order is essential so you can assign however helps you in the menus
+You can now navigate the menus using the lightgun alone.  I don't think you can assign the menu button which in the above example is pump action inside the game, so you may want to change that assignment if you want to use it instead of a side button.
 
 3) Add NES duck hunt to MiSTer and load it in the NES_Sinden core.
 
