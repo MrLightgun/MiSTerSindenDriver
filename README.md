@@ -143,19 +143,25 @@ SNES_Sinden - Battle Clash
 
 PSX_Sinden
 Remember to use the lightgun dpad when you first load the core.
+
 The PSX is a slightly more demanding core and when reading sounds and video of the CD you can see slowdown if the lightgun driver is using too much resource so I recommend medium resource for most scenarios but use low resource if you see any problems.
-Set Player1 to Guncon or Justifier depending on what the original lightgun support was
-Follow similar steps to the NES_Sinden core
+
+Set Player1 to Guncon or Justifier depending on what the original lightgun support was.
+
 Define the buttons using the lightgun.  The input ones are gun shoot which needs to be trigger.  Gun B which is good for rear left side button and Gun A as front left side button.  I don't think the others are required.
+
 If you tweak Fixed HBlank then you can normally get the game window to perfectly match the white border, this helps accuracy. 
+
 Remember to add a BIOS.
+
 2 Player does work.  You need to do step 2) for Lightgun2 also.  When you load the PSX core, remember to do dpad on Lightgun1, then dpad on Lightgun2.  Point Blank is a good game for testing 2 Player.  You need to set Player1 and Player2 to GunCon.  If you add a new lightgun probably best to do a hard reboot.  You also need to define buttons for the 2nd Lightgun.  As 2 player uses more resources and Point Blank does a lot of reading off the CD this is probably a good example where you need to use the low resource lightgun driver option.
 
 
-
 Genesis_Sinden
-I found I could only get T2 to work, when I had a joypad also attached.
+I found I could only get T2 to work, when I also had a joypad also attached.
+
 Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
+
 When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.  B and C to the left side buttons and Start and Select to the right side buttons, I don't believe the other buttons are any use.
 
 Under input, set:
