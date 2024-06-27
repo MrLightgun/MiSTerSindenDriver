@@ -58,8 +58,6 @@ Connect to MiSTer device over ssh (I like to use putty), or you can load console
 
 chmod +x Install_MrFusion.sh
 
-Before running, you need to kill the MiSTer service.  I recommend hitting F9 to exit MiSTer to the console, if you run "top" you will see the running applications.  Make a note of the process id for MiSTer, then exit top with ctrl-c.  Then run "sudo kill xxxx" where xxxx is the process id.  Run this just before you run the Install scripts.
-
 Now run the Install_MrFusion.sh script:
 
 ./Install_MrFusion.sh
