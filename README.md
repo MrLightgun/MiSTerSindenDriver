@@ -72,14 +72,17 @@ Go to scripts on the MiSTer main menu, select "LightgunStart-Default" click a bu
 Or on the console you can manually do:
 (medium resource)
 cd /media/fat/Lightgun/
+
 ./LightgunDriver joystick mediumresource
 
 or (low resource)
 cd /media/fat/Lightgun/
+
 ./LightgunDriver joystick lowresource
 
 or (max resource)
 cd /media/fat/Lightgun/
+
 ./LightgunDriver joystick
 
 2) Setup lightgun as a MiSTer menu device, this enables the cores to see it.
