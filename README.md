@@ -7,9 +7,9 @@ It is well known that the Sinden Lightgun performs it's video crunching on the t
 
 The installation quite easy and will hopefully become easier in the future.
 
-The driver has 3 modes, low resource, medium resource and normal.  If you run with the lowresource flag then it will only process video when you pull the trigger.  This makes it very efficient and the driver only takes up 4% of a cpu core.  The performance is acceptable, most 16bit and under games have a slow screen flash so the lightgun plays nicely.  Even games like T2 on the Genesis that need a continuous cursor you can just hold the trigger down.
+The driver has 3 modes, low resource, medium resource and normal.  If you run with the lowresource flag then it will only process video when you pull the trigger.  This makes it very efficient and the driver only takes up 4% of a cpu core.  The performance is solid, most 16bit and under games have a slow screen flash so the lightgun plays nicely.  Even games like T2 on the Genesis that need a continuous cursor you can just hold the trigger down.
 
-If you want a bit more lightgun performance then run mediumresource, this continually crunches video and therefore has a bigger footprint and still doesn't seem to interfere with the MiSTer processing.  The lightgun performance is therefore better and the coordinates will be ready when you pull the trigger instead of generating it afterwards.  To save resources it doesn't crunch every video frame.
+If you want a bit more lightgun performance then run default (mediumresource), this continually crunches video and therefore has a bigger footprint and still doesn't seem to interfere with the MiSTer processing.  The lightgun performance is therefore better and the coordinates will be ready when you pull the trigger instead of generating it afterwards.  To save resources it doesn't crunch every video frame.
 
 If you run without the lowresource and mediumresource flag then it just runs normally which still runs OK but theoretically things like PSX that also need to hit the ARM CPU could be affected.
 
