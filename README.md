@@ -27,7 +27,7 @@ Expect further improvements to the driver in the future.
 > **Note:** For reference my setup is a MiSTer Multisystem games console as seen here:
 https://www.rmcretro.com/videos/a-very-first-look-at-the-mister-multisystem-games-console-vDIz8WY6zLE
 
-Having joypad connected and a keyboard connected to your MiSTer is recommended during the configuration process, as well as the Sinden Lightgun.
+Having a joypad and a keyboard connected to your MiSTer is recommended during the configuration process, as well as the Sinden Lightgun.
 
 Your Sinden Lightgun needs v1.09 firmware. To update the firmware or check the current firmware version, follow these steps:
     
