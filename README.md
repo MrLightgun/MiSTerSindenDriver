@@ -251,6 +251,13 @@ To come hopefully:
 
 Other cores, maybe some of the computer cores; hopefully a future 3DO core would be good
 
+## Updating an existing build
+
+There will be some scripts to assist with updating a current build coming soon.
+
+## Known Issues
+
+Have had reports that the custom kernel might have an issue with some (or all) wifi/BT adapters.  We are rebuilding the kernel to resolve this.
 
 ## Special thanks
 
