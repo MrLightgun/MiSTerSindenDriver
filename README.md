@@ -68,6 +68,8 @@ https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.7
 
 1. The username is `root` and the password is `1` on MiSTer mainline. 
 
+1. Copy the contents of this repository to your MiSTer. You can use ftp, sftp, Windows shared folders, or any other method that you like. It is the same process as [transferring games](https://mister-devel.github.io/MkDocs_MiSTer/setup/games/).
+
 1. You will need to run the `Install_MrFusion.sh` script from this repository, or run the commands in the script individually.  You can either copy the commands and paste them into your shell, manually type them in by keyboard, or copy the script over using ftp/windows file sharing/ssh, then run it. You can copy it in "/media/fat"; if so, you will need to make it executable first:
 
     ```shell
