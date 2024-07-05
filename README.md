@@ -291,6 +291,16 @@ Other cores, maybe some of the computer cores; hopefully a future 3DO core would
 
 There will be some scripts to assist with updating a current build coming soon.
 
+## Lightgun Settings and Recoil
+
+Recoil should work by holding down "up" on the Dpad for 5 seconds, should toggle between Off/Single Shot/Automatic.
+To change Sinden Lightgun settings you can run:
+nano /media/fat/Lightgun/LightgunMono.exe.config
+To save: ctrl o
+To save: ctrl x
+
+Recommend beginners only changing lightgun camera exposure, brightness and contrast.
+
 ## Known Issues
 
 Custom kernel had an issue with some (or all) wifi/BT adapters, fixed kernel added 5th July 2024.  
