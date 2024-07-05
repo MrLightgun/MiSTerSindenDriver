@@ -185,7 +185,10 @@ So far these are the working cores with a couple of highlights:
 | PSX_Sinden   | Time Crisis, Point Blank|
 | Genesis_Sinden | Terminator 2 The Arcade Game |
 | SNES_Sinden  | Battle Clash            |
+| MegaCD*      | Mad Dog McCree          |
+| MegaDrive*   | Terminator 2 The Arcade Game |
 
+*Cores just added, more testing required.
 
 ### PSX_Sinden
 
@@ -225,6 +228,41 @@ On the input settings, set:
 - Gun Fire: Joy
 - Cross: Small but remember to turn off once everything is setup.
 
+### MegaDrive_Sinden
+
+https://github.com/MrLightgun/MegaDrive_MiSTer
+Core with Sinden border just added, initial testing seems to show crosshair doesn't match game aiming as accurately as the Genesis_Sinden core.
+Core supports mastersystem although haven't proven lightgun to work with this yet.
+
+Settings are likely to be:
+Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
+
+When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.  B and C to the left side buttons and Start and Select to the right side buttons. The rest of the buttons do not seem to be used.
+
+On the input settings, set:
+
+- Swap Joysticks: Yes
+- Gun Control: Joy1
+- Gun Fire: Joy
+- Cross: Small but remember to turn off once everything is setup.
+
+### MegaCD_Sinden
+
+https://github.com/MrLightgun/MegaCD_MiSTer
+Core with Sinden border just added, untested.
+
+
+Settings are likely to be:
+Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
+
+When assigning lightgun controls to the core, A button is a trigger, so assign A to the trigger.  B and C to the left side buttons and Start and Select to the right side buttons. The rest of the buttons do not seem to be used.
+
+On the input settings, set:
+
+- Swap Joysticks: Yes
+- Gun Control: Joy1
+- Gun Fire: Joy
+- Cross: Small but remember to turn off once everything is setup.
 
 ### SNES_Sinden
 >**Note:** Some of these steps have been done by the setup script.
@@ -245,8 +283,6 @@ On the input settings, set:
 ## Other cores and future development
 
 To come hopefully:
-- Sega Master System core - just need to add the border
-- SegaCD core - just need to add the border
 - Saturn core - I think this still requires lightgun support to be added plus a border
 
 Other cores, maybe some of the computer cores; hopefully a future 3DO core would be good
