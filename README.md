@@ -57,7 +57,6 @@ The following configuration has been tested and confirmed to work:
 
 1. Install MiSTer using MrFusion 2.7: 
 https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.7
-
 I now believe that any version will now work, but 2.7 has been tested.
 
 1. Update your MiSTer to the latest version. If using MrFusion:
