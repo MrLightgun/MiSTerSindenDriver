@@ -189,8 +189,9 @@ So far these are the working cores with a couple of highlights:
 | MegaCD_Sinden*      | Mad Dog McCree          |
 | MegaDrive_Sinden*   | Terminator 2 The Arcade Game |
 | SMS_Sinden**   | Gangster Town |
+| Atari7800_Sinden**   |  Alien Brigade?, Crossbow?|
 
-*Cores just added, more testing required.
+*Core just added, more testing required.
 ** Built Core not added yet but in progress.
 
 ### NES_Sinden
@@ -241,7 +242,7 @@ On the input settings, set:
 ### MegaDrive_Sinden
 https://github.com/MrLightgun/MegaDrive_MiSTer
 
-Core with Sinden border just added, initial testing seems to show crosshair doesn't match game aiming as accurately as the Genesis_Sinden core.
+Core with Sinden border just added, initial testing seems to show crosshair doesn't match game aiming as accurately as the Genesis_Sinden core.  Maybe MiSTer lightgun calibration option will fix this?
 Core supports mastersystem although haven't proven lightgun to work with this yet.
 
 Settings are likely to be:
@@ -292,6 +293,12 @@ On the input settings, set:
 
 ### SMS_Sinden
 https://github.com/MrLightgun/SMS_MiSTer
+
+Core in the process of being built and tested.
+
+### Atari7800_Sinden
+
+https://github.com/MrLightgun/Atari7800_MiSTer
 
 Core in the process of being built and tested.
 
