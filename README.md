@@ -186,10 +186,12 @@ So far these are the working cores with a couple of highlights:
 | PSX_Sinden   | Time Crisis, Point Blank|
 | Genesis_Sinden | Terminator 2 The Arcade Game |
 | SNES_Sinden  | Battle Clash            |
-| MegaCD*      | Mad Dog McCree          |
-| MegaDrive*   | Terminator 2 The Arcade Game |
+| MegaCD_Sinden*      | Mad Dog McCree          |
+| MegaDrive_Sinden*   | Terminator 2 The Arcade Game |
+| SMS_Sinden**   | Gangster Town |
 
 *Cores just added, more testing required.
+** Built Core not added yet but in progress.
 
 ### NES_Sinden
 https://github.com/MrLightgun/NES_MiSTer
@@ -288,7 +290,10 @@ On the input settings, set:
 - Super Scope Btn: Joy
 - Gun Type: Super Scope (or justifier, as required)
 
+### SMS_Sinden
+https://github.com/MrLightgun/SMS_MiSTer
 
+Core in the process of being built and tested.
 
 ## Other cores and future development
 
