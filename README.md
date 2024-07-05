@@ -190,6 +190,7 @@ So far these are the working cores with a couple of highlights:
 | MegaDrive_Sinden*   | Terminator 2 The Arcade Game |
 | SMS_Sinden**   | Gangster Town |
 | Atari7800_Sinden**   |  Alien Brigade?, Crossbow?|
+| InputTest_Sinden   |  Testing |
 
 *Core just added, more testing required.
 ** Built Core not added yet but in progress.
@@ -301,6 +302,12 @@ Core in the process of being built and tested.
 https://github.com/MrLightgun/Atari7800_MiSTer
 
 Core in the process of being built and tested.
+
+### InputTest_Sinden
+
+https://github.com/MrLightgun/InputTest_MiSTer
+
+Source code not built and tested but existing built core is confirmed to work.
 
 ## Other cores and future development
 
