@@ -293,7 +293,7 @@ There will be some scripts to assist with updating a current build coming soon.
 
 ## Known Issues
 
-Have had reports that the custom kernel might have an issue with some (or all) wifi/BT adapters.  We are rebuilding the kernel to resolve this.  So should have this sorted within a couple of days (4th July 2024).
+Custom kernel had an issue with some (or all) wifi/BT adapters, fixed kernel added 5th July 2024.  
 
 ## Special thanks
 
