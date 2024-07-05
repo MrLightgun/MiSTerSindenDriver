@@ -190,7 +190,13 @@ So far these are the working cores with a couple of highlights:
 
 *Cores just added, more testing required.
 
+### NES_Sinden
+https://github.com/MrLightgun/NES_MiSTer
+
+NES settings are detailed further up in the guide as NES is used as the example core.
+
 ### PSX_Sinden
+https://github.com/MrLightgun/PSX_MiSTer
 
 >**Note:** Some of these steps have been done by the setup script.
 
@@ -212,6 +218,7 @@ The 2nd player does work.  When you load the PSX core, remember to do dpad on Li
 
 
 ### Genesis_Sinden
+https://github.com/MrLightgun/Genesis_MiSTer
 
 >**Note:** Some of these steps have been done by the setup script.
 
@@ -229,8 +236,8 @@ On the input settings, set:
 - Cross: Small but remember to turn off once everything is setup.
 
 ### MegaDrive_Sinden
-
 https://github.com/MrLightgun/MegaDrive_MiSTer
+
 Core with Sinden border just added, initial testing seems to show crosshair doesn't match game aiming as accurately as the Genesis_Sinden core.
 Core supports mastersystem although haven't proven lightgun to work with this yet.
 
@@ -247,8 +254,8 @@ On the input settings, set:
 - Cross: Small but remember to turn off once everything is setup.
 
 ### MegaCD_Sinden
-
 https://github.com/MrLightgun/MegaCD_MiSTer
+
 Core with Sinden border just added, untested.
 
 
@@ -265,6 +272,8 @@ On the input settings, set:
 - Cross: Small but remember to turn off once everything is setup.
 
 ### SNES_Sinden
+https://github.com/MrLightgun/SNES_MiSTer
+
 >**Note:** Some of these steps have been done by the setup script.
 
 Same as the all the above, remember there was Superscope and Justifier too.
