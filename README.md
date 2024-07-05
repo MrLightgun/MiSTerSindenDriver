@@ -263,7 +263,7 @@ https://github.com/MrLightgun/MegaCD_MiSTer
 
 Core with Sinden border just added, now working with the updated MiSTer binary.
 
-Mad Dog McCree working, although shots are fired a bit different to where the crosshair is.
+Mad Dog McCree working, Justifier works so much better than Menacer.
 
 Settings are likely to be:
 Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
