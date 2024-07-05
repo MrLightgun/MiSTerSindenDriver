@@ -58,6 +58,8 @@ The following configuration has been tested and confirmed to work:
 1. Install MiSTer using MrFusion 2.7: 
 https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.7
 
+I now believe that any version will now work, but 2.7 has been tested.
+
 1. Update your MiSTer to the latest version. If using MrFusion:
 
     - Go to Scripts on the main menu and select "Update".  This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs.  This can take a while (around 10 mins?. Once the process is complete, reboot your MiSTer.
