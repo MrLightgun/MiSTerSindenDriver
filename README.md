@@ -215,6 +215,8 @@ Define the buttons using the lightgun.  The input ones are "Gun shoot", which ne
 
 If you tweak the "Fixed HBlank" setting, then you can normally get the game window to perfectly match the white border, this helps accuracy. 
 
+I've only noticed this in Point Blank 2 but on the menu there is a bit where you shoot the arcade option.  The game actually shoots where the gun last was, basically the game is updating the lightgun position all the time on this screen.  So if using low resource driver, you shoot arcade, the bullet shows on arcade but it selects the centre option instead where the gun was located on the previous shot.  To avoid this, when it is loading the screen, hold the trigger and when when the options appear you can point towards arcade and it will highlight, then you can shoot it.  After writing this, I have a hazy memory that something similar might happen in Area51 but not sure as my rom is not currently working on the MiSTer.
+
 #### 2 Players
 
 The 2nd player does work.  When you load the PSX core, remember to do dpad on Lightgun1, then dpad on Lightgun2.  Point Blank is a good game for testing 2 Player.  You need to set Player1 and Player2 to GunCon.  If you add a new lightgun probably best to do a hard reboot.  You also need to define buttons for the 2nd Lightgun.  As 2 player uses more resources and Point Blank does a lot of reading off the CD this is probably a good example where you need to use the low resource lightgun driver option.
