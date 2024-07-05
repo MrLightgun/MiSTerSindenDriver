@@ -261,8 +261,7 @@ On the input settings, set:
 ### MegaCD_Sinden
 https://github.com/MrLightgun/MegaCD_MiSTer
 
-Core with Sinden border just added, untested.
-
+Core with Sinden border just added, on my test system I am freezing on the space loading screen.  Not sure if that is the core or my bios.
 
 Settings are likely to be:
 Make sure to use the lightgun dpad when you first load the core, then use the gamepad dpad so it becomes Player2 which seems to be required.
@@ -295,13 +294,19 @@ On the input settings, set:
 ### SMS_Sinden
 https://github.com/MrLightgun/SMS_MiSTer
 
-Core in the process of being built and tested.
+Input:
+Swap Joysticks - No
+Gun Control - Joy1
+Gun Port - Port1
 
 ### Atari7800_Sinden
-
 https://github.com/MrLightgun/Atari7800_MiSTer
 
-Core in the process of being built and tested.
+Peripherals:
+Swap Joysticks - No
+Port1 Input - Lightgun
+Gun Control - Joy1
+Gun Fire - Joy
 
 ### InputTest_Sinden
 
