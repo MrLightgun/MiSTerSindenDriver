@@ -2,13 +2,13 @@
 
 This repository contains all the necessary files to enable the Sinden Lightgun functionality on the MiSTer platform.
 
-This guide is intended for individuals with technical expertise until we refine the details and provide more comprehensive scripts, documentation, and additional resources. 
+This guide is intended for individuals with technical expertise until we refine the details and provide more comprehensive scripts, documentation, and additional resources.
 
 ## What is the Sinden Lightgun
 
 The Sinden Lightgun is a lightgun controller compatible with modern LCD displays. Unlike other lightguns, the Sinden Lightgun works by processing the data from a video camera onboard the gun. This allows it to work without needing to attach any external IR emitters or other devices to your display. However, processing the camera data into a gun tracking position requires specialized software and a good amount of processing power.
 
-It is well known that the Sinden Lightgun performs it's video crunching on the target computer device.  This initially looked like it would not be possible to run on the MiSTer as the onboard ARM cpu (800Mhz) is quite underpowered and the Linux operating system is barebones.  However I have spent a lot of time developing a low resource driver that can comfortably run on the MiSTer and also removed many required components so it can run on the streamlined Linux OS.
+It is well known that the Sinden Lightgun performs its video crunching on the target computer device. This initially looked like it would not be possible to run on the MiSTer as the onboard ARM CPU (800Mhz) is quite underpowered and the Linux operating system is barebones. However, I have spent a lot of time developing a low-resource driver that can comfortably run on the MiSTer and also removed many required components so it can run on the streamlined Linux OS.
 
 ## The MiSTer Sinden Driver
 
@@ -43,13 +43,11 @@ Your Sinden Lightgun needs v1.09 firmware. To update the firmware or check the c
 1. Select enable joystick mode and Select OK on the prompts
 1. Disconnect the Sinden from the PC and connect it back to the MiSTer
 
-
 Your MiSTer needs to be connected to the internet, with ethernet it is the simplest way.
 
 We recommend using a fresh SD card. 
 
 This guide assumes the user has set up a MiSTer before and can get MiSTer working. If you haven't done this yet, we recommend using MrFusion and following some guides and just getting a general idea how everything works before following this guide.
-
 
 ## Installation
 
@@ -61,7 +59,7 @@ I now believe that any version will now work, but 2.7 has been tested.
 
 1. Update your MiSTer to the latest version. If using MrFusion:
 
-    - Go to Scripts on the main menu and select "Update".  This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs.  This can take a while (around 10 mins?. Once the process is complete, reboot your MiSTer.
+    - Go to Scripts on the main menu and select "Update".  This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs.  This can take a while (around 10 mins). Once the process is complete, reboot your MiSTer.
 
 1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
 
@@ -83,7 +81,23 @@ I now believe that any version will now work, but 2.7 has been tested.
     ./Install_MrFusion.sh
     ```
 
-1. Reboot MiSTer after the script has succesfully completed.
+1. Reboot MiSTer after the script has successfully completed.
+
+## Updating to the Latest Version
+
+To update your existing MiSTerSindenDriver setup to the latest version, follow these steps:
+
+1. Ensure your MiSTer is connected to the internet.
+
+1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
+
+1. Connect to MiSTer device over ssh (Using putty or your ssh client of choice) or, if you have a keyboard connected to the MiSTer, you can load console on the device pressing F9 on the keyboard.
+
+1. The username is `root` and the password is `1` on MiSTer mainline.
+
+1. Run the original `Install_MrFusion.sh` script that is still in the /media/fat folder.This script will download the latest files and re-run the installation, ensuring your setup is up-to-date.
+
+1. Reboot MiSTer after the script has successfully completed.
 
 ## Usage
 
@@ -346,4 +360,3 @@ Custom kernel had an issue with some (or all) wifi/BT adapters, fixed kernel add
 ## Special thanks
 
 This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson who assisted with the development and setup and Wiggy from the Sinden Lightgun Discord who help push to make it happen and assisted with the scripts and testing.
- 
