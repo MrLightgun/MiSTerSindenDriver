@@ -95,9 +95,54 @@ To update your existing MiSTerSindenDriver setup to the latest version, follow t
 
 1. The username is `root` and the password is `1` on MiSTer mainline.
 
-1. Run the original `Install_MrFusion.sh` script that is still in the /media/fat folder.This script will download the latest files and re-run the installation, ensuring your setup is up-to-date.
+1. Run the original `Install_MrFusion.sh` script that is still in the /media/fat/Lightgun/MiSTerSindenDriver-main folder. This script will download the latest files and re-run the installation, ensuring your setup is up-to-date:
+
+
+    ```shell
+    cd /media/fat/Lightgun/MiSTerSindenDriver-main
+    chmod +x Install_MrFusion.sh
+    ./Install_MrFusion.sh
+    ```
 
 1. Reboot MiSTer after the script has successfully completed.
+
+## Uninstallation
+
+To remove the Sinden Lightgun driver and associated files from your MiSTer setup, follow these steps:
+
+1. Ensure your MiSTer is powered on and connected to the internet.
+
+1. Find out your MiSTer IP address (available on the main settings menu) and note it down.
+
+1. Connect to your MiSTer device over SSH (using PuTTY or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
+
+1. The username is `root` and the password is `1` on MiSTer mainline.
+
+1. Navigate to the directory where you copied the `Uninstall_MrFusion.sh` script. For example, if you copied it to `/media/fat`, use:
+
+    ```shell
+    cd /media/fat/Lightgun/MiSTerSindenDriver-main
+    ```
+
+1. Make sure the `Uninstall_MrFusion.sh` script is executable:
+
+    ```shell
+    chmod +x Uninstall_MrFusion.sh
+    ```
+
+1. Run the `Uninstall_MrFusion.sh` script:
+
+    ```shell
+    ./Uninstall_MrFusion.sh
+    ```
+
+1. After the script has completed successfully, reboot your MiSTer:
+
+    ```shell
+    reboot
+    ```
+
+This will remove all files and directories associated with the Sinden Lightgun driver, restoring your MiSTer setup to its previous state.
 
 ## Usage
 
