@@ -104,4 +104,4 @@ sudo rm -f /media/fat/Lightgun/main.zip
 # Remove the Lightgun directory
 sudo rm -rf /media/fat/Lightgun
 
-echo "Uninstallation complete. Please reboot your MiSTer."
+echo "MiSTerSindenDriver uninstallation completed. Please reboot your MiSTer."
