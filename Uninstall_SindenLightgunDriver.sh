@@ -5,36 +5,18 @@
 # Remove custom cores with "Sinden" in their name
 sudo rm -f /media/fat/_Console/*_Sinden_*.rbf
 
-# Remove startup scripts
-sudo rm -f /media/fat/scripts/LightgunStart-Default.sh
-sudo rm -f /media/fat/scripts/LightgunStart-LowResource.sh
-sudo rm -f /media/fat/scripts/LightgunStart-MaxResource.sh
-sudo rm -f /media/fat/scripts/LightgunStop.sh
-
-# Remove lightgun driver and associated files
-sudo rm -f /media/fat/Lightgun/libcairo.so.2
-sudo rm -f /media/fat/Lightgun/libexif.so.12
-sudo rm -f /media/fat/Lightgun/libfontconfig.so.1
-sudo rm -f /media/fat/Lightgun/libgssapi_krb5.so.2
-sudo rm -f /media/fat/Lightgun/libk5crypto.so.3
-sudo rm -f /media/fat/Lightgun/libkeyutils.so.1
-sudo rm -f /media/fat/Lightgun/libkrb5.so.3
-sudo rm -f /media/fat/Lightgun/libkrb5support.so.0
-sudo rm -f /media/fat/Lightgun/libpixman-1.so.0
-sudo rm -f /media/fat/Lightgun/LightgunDriver
-sudo rm -f /media/fat/Lightgun/LightgunMono.exe.config
-sudo rm -f /media/fat/Lightgun/readme.txt
-
-# Remove libraries copied to /usr/lib
-sudo rm -f /usr/lib/libcairo.so.2
-sudo rm -f /usr/lib/libexif.so.12
-sudo rm -f /usr/lib/libfontconfig.so.1
-sudo rm -f /usr/lib/libgssapi_krb5.so.2
-sudo rm -f /usr/lib/libk5crypto.so.3
-sudo rm -f /usr/lib/libkeyutils.so.1
-sudo rm -f /usr/lib/libkrb5.so.3
-sudo rm -f /usr/lib/libkrb5support.so.0
-sudo rm -f /usr/lib/libpixman-1.so.0
+# Check if /usr/lib is writable and remove libraries if they exist (to be deprecated later)
+if [ -w /usr/lib ]; then
+    sudo rm -f /usr/lib/libcairo.so.2
+    sudo rm -f /usr/lib/libexif.so.12
+    sudo rm -f /usr/lib/libfontconfig.so.1
+    sudo rm -f /usr/lib/libgssapi_krb5.so.2
+    sudo rm -f /usr/lib/libk5crypto.so.3
+    sudo rm -f /usr/lib/libkeyutils.so.1
+    sudo rm -f /usr/lib/libkrb5.so.3
+    sudo rm -f /usr/lib/libkrb5support.so.0
+    sudo rm -f /usr/lib/libpixman-1.so.0
+fi
 
 # Restore original kernel
 if [ -f /media/fat/linux/zImage_dtb_backup ]; then
@@ -98,10 +80,28 @@ sudo rm -f /media/fat/config/inputs/SNES_input_16c0_0f38_v3.map
 sudo rm -f /media/fat/config/inputs/SNES_input_16c0_0f39_v3.map
 
 # Remove downloaded and extracted files
-sudo rm -rf /media/fat/Lightgun/MiSTerSindenDriver-main
-sudo rm -f /media/fat/Lightgun/main.zip
+sudo rm -rf /media/fat/Scripts/Sinden/MiSTerSindenDriver-main
+sudo rm -f /media/fat/Scripts/Sinden/main.zip
 
-# Remove the Lightgun directory
-sudo rm -rf /media/fat/Lightgun
+# Remove the Sinden directory
+sudo rm -rf /media/fat/Scripts/Sinden
+
+# Remove deprecated Lightgun folder if it exists
+if [ -d "/media/fat/Lightgun" ]; then
+    echo "Deprecated /media/fat/Lightgun folder found. Deleting..."
+    sudo rm -rf /media/fat/Lightgun
+fi
+
+# Remove SindenLightgun folder
+if [ -d "/media/fat/SindenLightgun" ]; then
+    echo "/media/fat/SindenLightgun folder found. Deleting..."
+    sudo rm -rf /media/fat/SindenLightgun
+fi
+
+# Remove startup scripts
+sudo rm -f /media/fat/Scripts/SindenLightgunStart_Default.sh
+sudo rm -f /media/fat/Scripts/SindenLightgunStart_LowResource.sh
+sudo rm -f /media/fat/Scripts/SindenLightgunStart_MaxResource.sh
+sudo rm -f /media/fat/Scripts/SindenLightgunStop.sh
 
 echo "MiSTerSindenDriver uninstallation completed. Please reboot your MiSTer."
