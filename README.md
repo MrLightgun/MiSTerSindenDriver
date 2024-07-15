@@ -322,7 +322,7 @@ There will be some scripts to assist with updating a current build coming soon.
 Recoil should work by holding down "up" on the Dpad for 5 seconds. This should toggle between Off/Single Shot/Automatic. To change Sinden Lightgun settings, you can run:
 
 ```bash
-nano /media/fat/SindenLightgun/LightgunMono.exe.config
+nano /media/fat/Scripts/Sinden/MiSTerSindenDriver-main/LightgunDriver/LightgunMono.exe.config
 ```
 
 To save: ctrl+o
