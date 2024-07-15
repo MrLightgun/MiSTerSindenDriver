@@ -61,7 +61,7 @@ The following configuration has been tested and confirmed to work:
 1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `wget`:
 
    ```shell
-   wget https://raw.githubusercontent.com/Matt-Retrogamer/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
+   wget https://raw.githubusercontent.com/MrLightgun/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
    ```
 
 1. From the MiSTer main menu, go to Scripts and select `Install_SindenLightgunDriver.sh`. This will execute the script and install the necessary files.
