@@ -58,7 +58,7 @@ The following configuration has been tested and confirmed to work:
 1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
 1. Connect to the MiSTer device over SSH (Using putty or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
 1. The username is `root` and the password is `1` on MiSTer mainline.
-1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `curl`:
+1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `wget`:
 
    ```shell
    wget https://raw.githubusercontent.com/Matt-Retrogamer/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
