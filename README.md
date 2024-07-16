@@ -53,19 +53,34 @@ This guide assumes the user has set up a MiSTer before and can get MiSTer workin
 The following configuration has been tested and confirmed to work:
 
 1. Install MiSTer using [MrFusion 2.7](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.7). Any version should work, but 2.7 has been tested.
+1. Ensure your MiSTer is connected to the internet.
 1. Update your MiSTer to the latest version. If using MrFusion:
    - Go to Scripts on the main menu and select "Update". This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs. This can take a while (around 10 mins). Once the process is complete, reboot your MiSTer.
+
+There are two options to install the `Install_SindenLightgunDriver.sh` script:
+
+### Option 1: Copy the Script to the SD Card
+
+1. Download the `Install_SindenLightgunDriver.sh` script from the repository to your computer.
+1. Copy the `Install_SindenLightgunDriver.sh` script to the `Scripts` folder at the root of your MiSTer SD card.
+
+### Option 2: Download the Script Over SSH
+
 1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
 1. Connect to the MiSTer device over SSH (Using putty or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
 1. The username is `root` and the password is `1` on MiSTer mainline.
-1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `wget`:
-
+1. Navigate to the `Scripts` directory:
    ```shell
-   wget https://raw.githubusercontent.com/Matt-Retrogamer/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
+   cd /media/fat/Scripts
+   ```
+1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `wget`:
+   ```shell
+   wget https://raw.githubusercontent.com/MrLightgun/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
    ```
 
-1. From the MiSTer main menu, go to Scripts and select `Install_SindenLightgunDriver.sh`. This will execute the script and install the necessary files.
+### Execute the Installation Script
 
+1. From the MiSTer main menu, go to Scripts and select `Install_SindenLightgunDriver.sh`. This will execute the script and install the necessary files.
 1. Reboot MiSTer after the script has successfully completed.
 
 ## Updating to the Latest Version
