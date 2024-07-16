@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Define the path for Sinden scripts and MiSTer config
+SINDEN_SCRIPTS_PATH="/media/fat/Scripts/Sinden"
+MISTER_CONFIG_PATH="/media/fat/config"
+
 # Uninstall script for MiSTerSindenDriver
 
 # Remove custom cores with "Sinden" in their name
@@ -32,59 +36,59 @@ if [ -f /media/fat/MiSTer_orig ]; then
 fi
 
 # Remove configs
-sudo rm -f /media/fat/config/ATARI7800.CFG
-sudo rm -f /media/fat/config/Genesis.CFG
-sudo rm -f /media/fat/config/MegaCD.CFG
-sudo rm -f /media/fat/config/MegaDrive.CFG
-sudo rm -f /media/fat/config/NES.CFG
-sudo rm -f /media/fat/config/PSX.CFG
-sudo rm -f /media/fat/config/SMS.CFG
-sudo rm -f /media/fat/config/SNES.CFG
+sudo rm -f $MISTER_CONFIG_PATH/ATARI7800.CFG
+sudo rm -f $MISTER_CONFIG_PATH/Genesis.CFG
+sudo rm -f $MISTER_CONFIG_PATH/MegaCD.CFG
+sudo rm -f $MISTER_CONFIG_PATH/MegaDrive.CFG
+sudo rm -f $MISTER_CONFIG_PATH/NES.CFG
+sudo rm -f $MISTER_CONFIG_PATH/PSX.CFG
+sudo rm -f $MISTER_CONFIG_PATH/SMS.CFG
+sudo rm -f $MISTER_CONFIG_PATH/SNES.CFG
 
 # Remove input maps
-sudo rm -f /media/fat/config/inputs/ATARI7800_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/ATARI7800_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/ATARI7800_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/ATARI7800_input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/Genesis_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/Genesis_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/Genesis_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/Genesis_input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/MegaCD_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/MegaCD_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/MegaCD_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/MegaCD_input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/MegaDrive_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/MegaDrive_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/MegaDrive_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/MegaDrive_input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/NES_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/NES_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/NES_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/NES_input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/PSX_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/PSX_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/PSX_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/PSX_input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/SMS_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/SMS_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/SMS_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/SMS_input_16c0_0f39_v3.map
-sudo rm -f /media/fat/config/inputs/SNES_input_16c0_0f01_v3.map
-sudo rm -f /media/fat/config/inputs/SNES_input_16c0_0f02_v3.map
-sudo rm -f /media/fat/config/inputs/SNES_input_16c0_0f38_v3.map
-sudo rm -f /media/fat/config/inputs/SNES_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f39_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f01_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f02_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f38_v3.map
+sudo rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f39_v3.map
 
 # Remove downloaded and extracted files
-sudo rm -rf /media/fat/Scripts/Sinden/MiSTerSindenDriver-main
-sudo rm -f /media/fat/Scripts/Sinden/main.zip
+sudo rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main
+sudo rm -f $SINDEN_SCRIPTS_PATH/main.zip
 
 # Remove the Sinden directory
-sudo rm -rf /media/fat/Scripts/Sinden
+sudo rm -rf $SINDEN_SCRIPTS_PATH
 
 # Remove deprecated Lightgun folder if it exists
 if [ -d "/media/fat/Lightgun" ]; then

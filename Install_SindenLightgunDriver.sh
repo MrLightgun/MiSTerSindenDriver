@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Define the path for Sinden scripts
+SINDEN_SCRIPTS_PATH="/media/fat/Scripts/Sinden"
+
 echo "Downloading the latest MiSTerSindenDriver version."
 
 # Remove deprecated old Lightgun folder if it exists
@@ -9,8 +12,8 @@ if [ -d "/media/fat/Lightgun" ]; then
 fi
 
 # Create and navigate to the Sinden directory
-sudo mkdir -p /media/fat/Scripts/Sinden
-cd /media/fat/Scripts/Sinden
+sudo mkdir -p $SINDEN_SCRIPTS_PATH
+cd $SINDEN_SCRIPTS_PATH
 
 # Download Sinden files on MiSTer using MrFusion 2.7
 sudo wget -O main.zip https://github.com/MrLightgun/MiSTerSindenDriver/archive/refs/heads/main.zip
