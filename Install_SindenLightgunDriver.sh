@@ -16,7 +16,7 @@ sudo mkdir -p $SINDEN_SCRIPTS_PATH
 cd $SINDEN_SCRIPTS_PATH
 
 # Download Sinden files on MiSTer using MrFusion 2.7
-sudo wget -O main.zip https://github.com/MrLightgun/MiSTerSindenDriver/archive/refs/heads/main.zip
+sudo wget -O main.zip https://github.com/Matt-Retrogamer/MiSTerSindenDriver/archive/refs/heads/main.zip
 sudo unzip -o main.zip
 
 # Navigate to the downloaded directory
