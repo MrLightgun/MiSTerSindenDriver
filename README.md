@@ -53,18 +53,34 @@ This guide assumes the user has set up a MiSTer before and can get MiSTer workin
 The following configuration has been tested and confirmed to work:
 
 1. Install MiSTer using [MrFusion 2.7](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.7). Any version should work, but 2.7 has been tested.
+1. Ensure your MiSTer is connected to the internet.
 1. Update your MiSTer to the latest version. If using MrFusion:
    - Go to Scripts on the main menu and select "Update". This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs. This can take a while (around 10 mins). Once the process is complete, reboot your MiSTer.
+
+There are two options to install the `Install_SindenLightgunDriver.sh` script:
+
+### Option 1: Copy the Script to the SD Card
+
+1. Download the `Install_SindenLightgunDriver.sh` script from the repository to your computer.
+1. Copy the `Install_SindenLightgunDriver.sh` script to the `Scripts` folder at the root of your MiSTer SD card.
+
+### Option 2: Download the Script Over SSH
+
 1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
 1. Connect to the MiSTer device over SSH (Using putty or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
 1. The username is `root` and the password is `1` on MiSTer mainline.
-1. Copy the contents of this repository to your MiSTer. You can use FTP, SFTP, Windows shared folders, or any other method that you like. It is the same process as transferring games.
-1. Run the `Install_MrFusion.sh` script from this repository, or run the commands in the script individually. You can either copy the commands and paste them into your shell, manually type them in by keyboard, or copy the script over using FTP/Windows file sharing/SSH, then run it. You can copy it in "/media/fat".
-
+1. Navigate to the `Scripts` directory:
    ```shell
-   ./Install_MrFusion.sh
+   cd /media/fat/Scripts
+   ```
+1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `wget`:
+   ```shell
+   wget https://raw.githubusercontent.com/MrLightgun/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
    ```
 
+### Execute the Installation Script
+
+1. From the MiSTer main menu, go to Scripts and select `Install_SindenLightgunDriver.sh`. This will execute the script and install the necessary files.
 1. Reboot MiSTer after the script has successfully completed.
 
 ## Updating to the Latest Version
@@ -72,39 +88,20 @@ The following configuration has been tested and confirmed to work:
 To update your existing MiSTerSindenDriver setup to the latest version, follow these steps:
 
 1. Ensure your MiSTer is connected to the internet.
-1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
-1. Connect to the MiSTer device over SSH (Using putty or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
-1. The username is `root` and the password is `1` on MiSTer mainline.
-1. Run the original `Install_MrFusion.sh` script that is still in the /media/fat/Lightgun/MiSTerSindenDriver-main folder. This script will download the latest files and re-run the installation, ensuring your setup is up-to-date:
-
-   ```shell
-   cd /media/fat/Lightgun/MiSTerSindenDriver-main
-   ./Install_MrFusion.sh
-   ```
-
-6. Reboot MiSTer after the script has successfully completed.
+1. From the MiSTer main menu, go to `Scripts`.
+1. Navigate to `/media/fat/Scripts/Sinden/MiSTerSindenDriver-main`.
+1. Select `Install_SindenLightgunDriver.sh` and execute it. This script will download the latest files and re-run the installation, ensuring your setup is up-to-date.
+1. Reboot MiSTer after the script has successfully completed.
 
 ## Uninstallation
 
 To remove the Sinden Lightgun driver and associated files from your MiSTer setup, follow these steps:
 
 1. Ensure your MiSTer is powered on and connected to the internet.
-2. Find out your MiSTer IP address (available on the main settings menu) and note it down.
-3. Connect to your MiSTer device over SSH (using PuTTY or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
-4. The username is `root` and the password is `1` on MiSTer mainline.
-5. Navigate to the directory where you copied the `Uninstall_MrFusion`.sh script. For example, if you copied it to `/media/fat`, use:
-
-   ```shell
-   cd /media/fat/Lightgun/MiSTerSindenDriver-main
-   ```
-
-6. Run the `Uninstall_MrFusion.sh` script:
-
-   ```shell
-   ./Uninstall_MrFusion.sh
-   ```
-
-7. Reboot MiSTer after the script has successfully completed.
+1. From the MiSTer main menu, go to `Scripts`.
+1. Navigate to `/media/fat/Scripts/Sinden/MiSTerSindenDriver-main`.
+1. Select `Uninstall_SindenLightgunDriver.sh` and execute it.
+1. Reboot MiSTer after the script has successfully completed.
 
 ## Usage
 
@@ -112,29 +109,26 @@ There are multiple steps for getting lightguns to work in MiSTer, make sure to f
 
 ### 1. Run the lightgun driver
 
-Go to scripts on the MiSTer main menu, select "LightgunStart-Default" and click a button on your gamepad after it has started up.
+Go to scripts on the MiSTer main menu, navigate to `/media/fat/Scripts` and select `SindenLightgunStart_Default.sh`. Click a button on your gamepad after it has started up.
 
-Or run it manually from the shell console:
+Or, if you prefer to run it manually from the shell console, use the following commands:
 
 - For medium resource:
 
    ```shell
-   cd /media/fat/Lightgun/
-   ./LightgunDriver joystick mediumresource
+   /media/fat/Scripts/SindenLightgunStart_Default.sh
    ```
 
 - For low resource:
 
    ```shell
-   cd /media/fat/Lightgun/
-   ./LightgunDriver joystick lowresource
+   /media/fat/Scripts/SindenLightgunStart_LowResource.sh
    ```
 
 - For max resource:
 
    ```shell
-   cd /media/fat/Lightgun/
-   ./LightgunDriver joystick
+   /media/fat/Scripts/SindenLightgunStart_MaxResource.sh
    ```
 
 ### 2. Setup lightgun as a MiSTer menu device
@@ -343,7 +337,7 @@ There will be some scripts to assist with updating a current build coming soon.
 Recoil should work by holding down "up" on the Dpad for 5 seconds. This should toggle between Off/Single Shot/Automatic. To change Sinden Lightgun settings, you can run:
 
 ```bash
-nano /media/fat/Lightgun/LightgunMono.exe.config
+nano /media/fat/Scripts/Sinden/MiSTerSindenDriver-main/LightgunDriver/LightgunMono.exe.config
 ```
 
 To save: ctrl+o
