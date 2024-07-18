@@ -342,13 +342,19 @@ To exit: ctrl+x
 
 Recommend beginners only changing lightgun camera exposure, brightness, and contrast.
 
+## Sinden Lightgun Calibration
+
+Load a core (suggest NES_Sinden), enable crosshair, then in game, hold down dpad left for a few seconds on the Sinden Lightgun, till the crosshair goes to the centre of the screen.  Carefully shoot the crosshair with as much accuracy as you can.  Then the lightgun should be nicely calibrated.
+
+You shouldn't need to use the MiSTer lightgun calibration tool.
+
 ## Known Issues
 
 Custom kernel had an issue with some (or all) wifi/BT adapters, fixed kernel added 5th July 2024.
 
 ## Special Thanks
 
-This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson, who assisted with the development and setup, and Wiggy from the Sinden Lightgun Discord, who helped push to make it happen and assisted with the scripts and testing.
+This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson, who assisted with the development and setup, and Wiggy from the Sinden Lightgun Discord, who helped push to make it happen and assisted with the scripts and testing.  Additional thanks to Matt_RetroGamer from the Sinden Lightgun discord who helped make the scripts run so much better for easier installation.
 
 ## Note
 
