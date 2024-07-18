@@ -188,14 +188,11 @@ So far these are the working cores with a couple of highlights:
 | PSX_Sinden          | Time Crisis, Point Blank                |
 | Genesis_Sinden      | Terminator 2 The Arcade Game            |
 | SNES_Sinden         | Battle Clash                            |
-| MegaCD_Sinden*      | Mad Dog McCree                          |
-| MegaDrive_Sinden*   | Terminator 2 The Arcade Game            |
-| SMS_Sinden**        | Gangster Town                           |
-| Atari7800_Sinden**  | Alien Brigade?, Crossbow?               |
+| MegaCD_Sinden      | Mad Dog McCree                          |
+| MegaDrive_Sinden   | Terminator 2 The Arcade Game            |
+| SMS_Sinden        | Gangster Town                           |
+| Atari7800_Sinden  | Alien Brigade, Crossbow?               |
 | InputTest_Sinden    | Testing                                 |
-
-* Core just added, more testing required.
-** Built Core not added yet but in progress.
 
 ### NES_Sinden
 
