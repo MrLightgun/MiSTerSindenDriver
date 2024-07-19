@@ -108,4 +108,10 @@ rm -f /media/fat/Scripts/SindenLightgunStart_LowResource.sh
 rm -f /media/fat/Scripts/SindenLightgunStart_MaxResource.sh
 rm -f /media/fat/Scripts/SindenLightgunStop.sh
 
+# Delete the first install Install_SindenLightgunDriver.sh file
+if [ -f "/media/fat/Scripts/Install_SindenLightgunDriver.sh" ]; then
+    echo "Deleting Install_SindenLightgunDriver.sh..."
+    rm -f /media/fat/Scripts/Install_SindenLightgunDriver.sh
+fi
+
 echo "MiSTerSindenDriver uninstallation completed. Please reboot your MiSTer."

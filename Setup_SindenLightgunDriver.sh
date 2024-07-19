@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
 # Define the path for Sinden scripts
 SINDEN_SCRIPTS_PATH="/media/fat/Scripts/Sinden"
 
