@@ -96,7 +96,7 @@ if [ -d "/media/fat/Lightgun" ]; then
     rm -rf /media/fat/Lightgun
 fi
 
-# Remove SindenLightgun folder
+# Remove deprecated SindenLightgun folder if it exists
 if [ -d "/media/fat/SindenLightgun" ]; then
     echo "/media/fat/SindenLightgun folder found. Deleting..."
     rm -rf /media/fat/SindenLightgun
@@ -107,5 +107,11 @@ rm -f /media/fat/Scripts/SindenLightgunStart_Default.sh
 rm -f /media/fat/Scripts/SindenLightgunStart_LowResource.sh
 rm -f /media/fat/Scripts/SindenLightgunStart_MaxResource.sh
 rm -f /media/fat/Scripts/SindenLightgunStop.sh
+
+# Delete the first install Install_SindenLightgunDriver.sh file
+if [ -f "/media/fat/Scripts/Install_SindenLightgunDriver.sh" ]; then
+    echo "Deleting Install_SindenLightgunDriver.sh..."
+    rm -f /media/fat/Scripts/Install_SindenLightgunDriver.sh
+fi
 
 echo "MiSTerSindenDriver uninstallation completed. Please reboot your MiSTer."
