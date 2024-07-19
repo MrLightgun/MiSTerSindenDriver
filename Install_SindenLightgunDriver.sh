@@ -49,7 +49,7 @@ fi
 
 # Delete the downloaded main.zip file
 if [ -f "$SINDEN_SCRIPTS_PATH/main.zip" ]; then
-    echo "Deleting Sinden/main.zip..."
+    echo "Deleting downloaded main.zip..."
     rm -f $SINDEN_SCRIPTS_PATH/main.zip
 fi
 
