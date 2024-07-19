@@ -41,5 +41,8 @@ if [ -f "/media/fat/Scripts/Install_SindenLightgunDriver.sh" ]; then
     rm -f /media/fat/Scripts/Install_SindenLightgunDriver.sh
 fi
 
-# Print success message asking the user to reboot your MiSTer
-echo "Install Successful. Please reboot your MiSTer to complete the installation."
+# Print success message and inform the user about the reboot
+echo "Install Successful.  your MiSTer will reboot in 5 seconds to complete the installation."
+sleep 5
+echo "Rebooting now..."
+reboot
