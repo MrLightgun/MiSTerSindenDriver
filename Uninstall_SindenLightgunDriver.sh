@@ -96,7 +96,7 @@ if [ -d "/media/fat/Lightgun" ]; then
     rm -rf /media/fat/Lightgun
 fi
 
-# Remove SindenLightgun folder
+# Remove deprecated SindenLightgun folder if it exists
 if [ -d "/media/fat/SindenLightgun" ]; then
     echo "/media/fat/SindenLightgun folder found. Deleting..."
     rm -rf /media/fat/SindenLightgun

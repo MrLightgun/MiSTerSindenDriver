@@ -14,6 +14,12 @@ if [ -d "/media/fat/Lightgun" ]; then
     rm -rf /media/fat/Lightgun
 fi
 
+# Remove deprecated SindenLightgun folder if it exists
+if [ -d "/media/fat/SindenLightgun" ]; then
+    echo "/media/fat/SindenLightgun folder found. Deleting..."
+    rm -rf /media/fat/SindenLightgun
+fi
+
 # Create and navigate to the Sinden directory
 mkdir -p $SINDEN_SCRIPTS_PATH
 cd $SINDEN_SCRIPTS_PATH
@@ -39,6 +45,12 @@ echo "Finished MiSTerSindenDriver setup."
 if [ -f "/media/fat/Scripts/Install_SindenLightgunDriver.sh" ]; then
     echo "Deleting Install_SindenLightgunDriver.sh..."
     rm -f /media/fat/Scripts/Install_SindenLightgunDriver.sh
+fi
+
+# Delete the downloaded main.zip file
+if [ -f "$SINDEN_SCRIPTS_PATH/main.zip" ]; then
+    echo "Deleting Sinden/main.zip..."
+    rm -f $SINDEN_SCRIPTS_PATH/main.zip
 fi
 
 # Print success message and inform the user about the reboot

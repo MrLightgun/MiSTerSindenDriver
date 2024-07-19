@@ -16,12 +16,6 @@ chmod 755 /media/fat/_Console/*.rbf
 cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/StartupScripts
 cp -f *.sh /media/fat/Scripts
 
-# Copy lightgun driver
-cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/LightgunDriver
-mkdir -p /media/fat/SindenLightgun
-cp -f *.* /media/fat/SindenLightgun/
-cp -f LightgunDriver /media/fat/SindenLightgun/LightgunDriver
-
 # Copy tweaked kernel
 cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Kernel/MiSTerFPGA/MrFusion2.7/
 cp -f /media/fat/linux/zImage_dtb /media/fat/linux/zImage_dtb_backup
