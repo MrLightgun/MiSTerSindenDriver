@@ -75,7 +75,7 @@ There are two options to install the `Install_SindenLightgunDriver.sh` script:
    ```
 1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `wget`:
    ```shell
-   wget https://raw.githubusercontent.com/Matt-Retrogamer/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
+   wget https://raw.githubusercontent.com/MrLightgun/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
    ```
 
 ### Execute the Installation Script
