@@ -20,7 +20,10 @@ cd $SINDEN_SCRIPTS_PATH
 
 # Download Sinden files on MiSTer using MrFusion 2.7
 wget -O main.zip https://github.com/Matt-Retrogamer/MiSTerSindenDriver/archive/refs/heads/main.zip
-unzip -o main.zip
+
+# Inform the user to wait until the unzip is done
+echo "Please wait while the files are being unzipped..."
+unzip -oq main.zip
 
 # Navigate to the downloaded directory
 cd MiSTerSindenDriver-main
@@ -36,7 +39,7 @@ if [ -f "/media/fat/Scripts/Install_SindenLightgunDriver.sh" ]; then
 fi
 
 # Ask the user if they want to reboot the machine
-read -p "Install Successful. Do you want to reboot the machine? (Y/N): " -n 1 -r
+read -p "Install Successful. Do you want to reboot the machine? (Y/N): " -n 1 -r </dev/tty
 echo    # move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

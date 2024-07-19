@@ -116,7 +116,7 @@ fi
 
 echo "MiSTerSindenDriver uninstallation completed. Please reboot your MiSTer."
 # Ask the user if they want to reboot the machine
-read -p Uninstall Successful. Do you want to reboot the machine? (Y/N): " -n 1 -r
+read -p "Uninstall Successful. Do you want to reboot the machine? (Y/N): " -n 1 -r </dev/tty
 echo    # move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
