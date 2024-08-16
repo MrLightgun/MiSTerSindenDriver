@@ -354,6 +354,8 @@ Custom kernel had an issue with some (or all) wifi/BT adapters, fixed kernel add
 
 An conflict with TapTo was identified due to TapTo and Sinden Lightgun both using serial ports.  The author of TapTo, Wizzo has kindly added an exclusion so that TapTo no longer polls a serial port if it is a Sinden Lightgun in the latest version.  I'm not sure how long this will take to fully propogate to if you have an issue with the lightgun driver not starting properly and have TapTo installed, it would be worth disabling TapTo to make sure that isn't the conflict.  This is probably more likely to affect people that download complete SD cards.  If it is the cause then please download the latest version of TapTo.
 
+If you find that the lightgun is only moving on the X-axis, this is probably because you have updated the MiSTer binary after installing the Sinden driver.  To fix, re-run Setup_SindenLightgunDriver.sh, you can find this in the Sinden folder within Scripts.  You may need to manually reboot afterwards.
+
 ## Special Thanks
 
 This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson, who assisted with the development and setup, and Wiggy from the Sinden Lightgun Discord, who helped push to make it happen and assisted with the scripts and testing.  Additional thanks to Matt_RetroGamer from the Sinden Lightgun discord who helped make the scripts run so much better for easier installation.
