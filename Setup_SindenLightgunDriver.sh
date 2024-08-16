@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
 # Define the path for Sinden scripts
 SINDEN_SCRIPTS_PATH="/media/fat/Scripts/Sinden"
 
@@ -12,12 +15,6 @@ chmod 755 /media/fat/_Console/*.rbf
 # Copy startup scripts to easily start and stop the lightgun
 cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/StartupScripts
 cp -f *.sh /media/fat/Scripts
-
-# Copy lightgun driver
-cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/LightgunDriver
-mkdir -p /media/fat/SindenLightgun
-cp -f *.* /media/fat/SindenLightgun/
-cp -f LightgunDriver /media/fat/SindenLightgun/LightgunDriver
 
 # Copy tweaked kernel
 cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Kernel/MiSTerFPGA/MrFusion2.7/
