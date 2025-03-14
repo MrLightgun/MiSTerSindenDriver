@@ -7,7 +7,19 @@ MISTER_CONFIG_PATH="/media/fat/config"
 # Uninstall script for MiSTerSindenDriver
 
 # Remove custom cores with "Sinden" in their name
-rm -f /media/fat/_Console/*_Sinden_*.rbf
+rm -rf /media/fat/Light Gun
+rm -f /media/fat/_Console/Atari 7800 Light Gun.mgl
+rm -f /media/fat/_Console/InputTest Light Gun.mgl
+rm -f /media/fat/_Console/NES Light Gun.mgl
+rm -f /media/fat/_Console/Playstation Light Gun (Dual Ram).mgl
+rm -f /media/fat/_Console/Playstation Light Gun.mgl
+rm -f /media/fat/_Console/SEGA Genesis Light Gun.mgl
+rm -f /media/fat/_Console/SEGA Master System Light Gun.mgl
+rm -f /media/fat/_Console/SEGA Mega Drive Light Gun.mgl
+rm -f /media/fat/_Console/SEGA Mega-CD Light Gun.mgl
+rm -f /media/fat/_Console/SEGA Saturn Light Gun (Dual Ram).mgl
+rm -f /media/fat/_Console/SEGA Saturn Light Gun.mgl
+rm -f /media/fat/_Console/Super Nintendo Light Gun.mgl
 
 # Check if /usr/lib is writable and remove libraries if they exist (to be deprecated later)
 if [ -w /usr/lib ]; then
@@ -36,52 +48,63 @@ if [ -f /media/fat/MiSTer_orig ]; then
 fi
 
 # Remove configs
-rm -f $MISTER_CONFIG_PATH/ATARI7800.CFG
-rm -f $MISTER_CONFIG_PATH/Genesis.CFG
-rm -f $MISTER_CONFIG_PATH/MegaCD.CFG
-rm -f $MISTER_CONFIG_PATH/MegaDrive.CFG
-rm -f $MISTER_CONFIG_PATH/NES.CFG
-rm -f $MISTER_CONFIG_PATH/PSX.CFG
-rm -f $MISTER_CONFIG_PATH/SMS.CFG
-rm -f $MISTER_CONFIG_PATH/SNES.CFG
+rm -f $MISTER_CONFIG_PATH/Atari7800 Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/NES Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/Playstation Light Gun (Dual Ram).CFG
+rm -f $MISTER_CONFIG_PATH/Playstation Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/Saturn Light Gun (Dual Ram).CFG
+rm -f $MISTER_CONFIG_PATH/Saturn Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/SEGA Genesis Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/SEGA Master System Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/SEGA Mega Drive Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/SEGA Mega-CD Light Gun.CFG
+rm -f $MISTER_CONFIG_PATH/Super Nintendo Light Gun.CFG
 
 # Remove input maps
-rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/ATARI7800_input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/Genesis_input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaCD_input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/MegaDrive_input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/NES_input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/PSX_input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SMS_input_16c0_0f39_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f01_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f02_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f38_v3.map
-rm -f $MISTER_CONFIG_PATH/inputs/SNES_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Atari 7800 Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Atari 7800 Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Atari 7800 Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Atari7800 Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Genesis Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Genesis Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Genesis Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Genesis Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/InputTest Light Gun_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/InputTest Light Gun_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/InputTest Light Gun_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/InputTest Light Gun_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/NES Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/NES Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/NES Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/NES Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun (Dual Ram)_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun (Dual Ram)_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun (Dual Ram)_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun (Dual Ram)_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Playstation Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Genesis Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Genesis Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Genesis Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Genesis Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Master System Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Master System Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Master System Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Master System Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega Drive Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega Drive Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega Drive Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega Drive Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega-CD Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega-CD Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega-CD Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/SEGA Mega-CD Light Gun_input_16c0_0f39_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Super Nintendo Light Gun_input_16c0_0f01_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Super Nintendo Light Gun_input_16c0_0f02_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Super Nintendo Light Gun_input_16c0_0f38_v3.map
+rm -f $MISTER_CONFIG_PATH/inputs/Super Nintendo Light Gun_input_16c0_0f39_v3.map
 
 # Remove downloaded and extracted files
 rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main
