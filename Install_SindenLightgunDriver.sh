@@ -27,7 +27,7 @@ cd $SINDEN_SCRIPTS_PATH
 # Inform the user to wait until the download is done
 echo "Please wait while the latest version is being downloaded..."
 # Download Sinden files on MiSTer using MrFusion 2.7
-wget -O main.zip https://github.com/MrLightgun/MiSTerSindenDriver/archive/refs/heads/main.zip
+wget -O main.zip https://github.com/terminator2k2/MiSTerSindenDriver/archive/refs/heads/main.zip
 
 # Inform the user to wait until the unzip is done
 echo "Please wait while the files are being unzipped..."
