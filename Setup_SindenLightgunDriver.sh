@@ -7,7 +7,7 @@ set -e
 SINDEN_SCRIPTS_PATH="/media/fat/Scripts/Sinden"
 
 # Copy custom cores and mgl files that have Sinden border built in
-#cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Cores
+cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Cores
 mkdir -p /media/fat/Light\ Gun/
 cp -f *.rbf /media/fat/Light\ Gun/
 chmod 755 /media/fat/Light\ Gun/*.rbf
