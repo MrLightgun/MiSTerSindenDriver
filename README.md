@@ -186,6 +186,7 @@ So far these are the working cores with a couple of highlights:
 |---------------------|-----------------------------------------|
 | NES_Sinden          | Duck Hunt                               |
 | PSX_Sinden          | Time Crisis, Point Blank                |
+| Saturn_MiSTer_Sinden| House Of The Dead, Virtua Cop 1 and 2   |
 | Genesis_Sinden      | Terminator 2 The Arcade Game            |
 | SNES_Sinden         | Battle Clash                            |
 | MegaCD_Sinden      | Mad Dog McCree                          |
@@ -222,6 +223,16 @@ I've only noticed this in Point Blank 2, but on the menu, there is a bit where y
 The 2nd player does work. When you load the PSX core, remember to do dpad on Lightgun1, then dpad on Lightgun2. Point Blank is a good game for testing 2 Player. You need to set Player1 and Player2 to GunCon. If you add a new lightgun, probably best to do a hard reboot. You also need to define buttons for the 2nd Lightgun. As 2 players use more resources and Point Blank does a lot of reading off the CD, this is probably a good example where you need to use the low resource lightgun driver option.
 
 >**Tip:** Remember to add a PS1 BIOS for the PS1 core.
+
+### Saturn_MiSTer_Sinden
+
+https://github.com/MrLightgun/Saturn_MiSTer_Sinden
+
+Added on 1st April 2025, thanks to terminator2k2.  I have tested the normal (non dual ram) core that worked well for me with Virtua Cop 2 and House Of The Dead.  You need to assign the gun actions in the core.  "A" button is the trigger.  You need to assign A/B/C/Start.  Remember to calibrate the lightgun in the game.  When I did that, everything lined up great.  The dual ram core didn't work for me, I assume my memory is not compatible or there is something I missed, but hopefully it works fine for other people who already have that core working.
+
+I have not yet tested 2 player.
+
+Remember to use the lightgun first when you load the core not a controller.
 
 ### Genesis_Sinden
 
