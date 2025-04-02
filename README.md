@@ -136,6 +136,7 @@ Or, if you prefer to run it manually from the shell console, use the following c
 Setting up the lightgun as a MiSTer menu device enables the cores to see it.
 
 > **Important** : THIS STEP IS NOW HANDLED BY THE SETUP SCRIPT, THESE NOTES ARE HERE FOR REFERENCE
+> **Important** : I tested all the recent updates (MrLightgun) and I did still need to do this step, trying to work out why, so if you are having difficulties then consider to do this step.
 
 1. Scroll through MiSTer settings, using your gamepad access System Settings -> Define joystick buttons.
 1. When it prompts for the `DPAD Test: Press Right`, push right on Sinden Lightgun directional pad.
