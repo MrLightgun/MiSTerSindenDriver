@@ -17,6 +17,7 @@ cd $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/mgl
 mkdir -p /media/fat/_Console/
 cp -f *.mgl /media/fat/_Console/
 chmod 755 /media/fat/_Console/*.mgl
+mv /media/fat/_Console/InputTest\ Light\ Gun.mgl  /media/fat/_Utility
 echo "Moved Sinden mgl Files."
 
 # Copy startup scripts to easily start and stop the lightgun
@@ -34,5 +35,14 @@ mkdir -p /media/fat/config/inputs
 cp -f $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Config/*.* /media/fat/config
 cp -f $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Config/inputs/*.* /media/fat/config/inputs
 echo "Moved Sinden CFG Files."
+
+rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/mgl
+echo "Removed Setup mgl Files."
+rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Cores
+echo "Removed Setup core Files."
+rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Config
+echo "Removed Setup CFG Files."
+rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/StartupScripts
+echo "Removed Setup Scripts Files."
 
 echo "Setup complete. Please reboot the MiSTer to apply changes."
