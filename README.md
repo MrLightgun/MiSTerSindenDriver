@@ -153,7 +153,15 @@ Important: Don't wave the lightgun around while doing the above, as the movement
 
 You can now navigate the menus using the lightgun alone.
 
-### 3. Test the lightgun in a core
+### 3. Test the lightgun in "InputTest Sinden Lightgun"
+
+1. Lunch the InputTest version for Sinden
+1. Push the lightgun D-Pad first so that it is assigned JOY 1
+1. The buttons that you have mapped as MiSTer inputs in step 2 should light up when activated.
+1. If you followed the instructions in step 2 correctly you should be able to demonstrate D-Pad (L,U,R,D) and Start.
+    >**NOTE**: The buttons that were not mapped to joystick functions will not be demonstrable in this test, but you can see they are working by navigating the MiSTer menus.
+
+### 4. Test the lightgun in a core
 
 1. Add NES Duck Hunt to your MiSTer.
 1. Load the `NES_Sinden` core
