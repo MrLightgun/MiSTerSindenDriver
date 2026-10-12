@@ -36,6 +36,39 @@ cp -f $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Config/*.* /media/fat/config
 cp -f $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Config/inputs/*.* /media/fat/config/inputs
 echo "Moved Sinden CFG Files."
 
+# Start the driver automatically at boot. MiSTer runs
+# /media/fat/linux/user-startup.sh - note the file it ships as an example,
+# _user-startup.sh (leading underscore), is NOT run by MiSTer, so without this
+# step the driver only ever runs if you start it by hand from the Scripts menu
+# after every power-on.
+HOOK=/media/fat/linux/user-startup.sh
+if ! grep -q "SindenLightgunStart" "$HOOK" 2>/dev/null; then
+    [ -f "$HOOK" ] && cp "$HOOK" "$HOOK.pre-sinden.bak"
+    cat >> "$HOOK" <<'EOS'
+
+# Sinden Lightgun driver autostart.
+# Poll for the gun's serial interface and camera rather than sleep a fixed
+# guess: too short races USB enumeration, too long leaves the gun dead for no
+# reason after every boot.
+(
+    i=0
+    while [ $i -lt 60 ]; do
+        if ls /dev/ttyACM* >/dev/null 2>&1 && [ -e /dev/video0 ]; then
+            sleep 2
+            /bin/bash /media/fat/Scripts/SindenLightgunStart_Default.sh
+            exit 0
+        fi
+        sleep 1
+        i=$((i + 1))
+    done
+) &
+EOS
+    chmod +x "$HOOK"
+    echo "Added Sinden driver autostart to $HOOK."
+else
+    echo "Sinden driver autostart already present in $HOOK - left unchanged."
+fi
+
 rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/mgl
 echo "Removed Setup mgl Files."
 rm -rf $SINDEN_SCRIPTS_PATH/MiSTerSindenDriver-main/Cores
