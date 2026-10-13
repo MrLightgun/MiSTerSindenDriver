@@ -139,6 +139,17 @@ Setting up the lightgun as a MiSTer menu device enables the cores to see it.
 
 > **Important** : I tested all the recent updates (MrLightgun) and I did still need to do this step, trying to work out why, so if you are having difficulties then consider to do this step.
 
+> **Update**: found the reason this step was still needed. MiSTer uses two
+> different input maps per device - a core-specific one for in-game controls,
+> and a separate generic one (`input_<vid>_<pid>_v3.map`, no core name prefix)
+> that drives every menu and OSD, including "Define joystick buttons" itself.
+> The setup script copied the 44 core-specific maps but never the generic one,
+> so the gun had no menu map until you manually built one through Define
+> joystick buttons. The generic maps are now shipped in `Config/inputs/` for
+> all four Sinden PIDs, so this manual step should no longer be necessary -
+> leaving the instructions below for anyone who wants different menu buttons,
+> or is troubleshooting an older install.
+
 1. Scroll through MiSTer settings, using your gamepad access System Settings -> Define joystick buttons.
 1. When it prompts for the `DPAD Test: Press Right`, push right on Sinden Lightgun directional pad.
 1. Press the space bar on the keyboard to skip all the tilt settings.
@@ -368,6 +379,87 @@ Custom kernel had an issue with some (or all) wifi/BT adapters, fixed kernel add
 An conflict with TapTo was identified due to TapTo and Sinden Lightgun both using serial ports.  The author of TapTo, Wizzo has kindly added an exclusion so that TapTo no longer polls a serial port if it is a Sinden Lightgun in the latest version.  I'm not sure how long this will take to fully propogate to if you have an issue with the lightgun driver not starting properly and have TapTo installed, it would be worth disabling TapTo to make sure that isn't the conflict.  This is probably more likely to affect people that download complete SD cards.  If it is the cause then please download the latest version of TapTo.
 
 If you find that the lightgun is only moving on the X-axis, this is probably because you have updated the MiSTer binary after installing the Sinden driver.  To fix, re-run Setup_SindenLightgunDriver.sh, you can find this in the Sinden folder within Scripts.  You may need to manually reboot afterwards.
+
+### Replaced the camera module? The Sinden software won't let you set the new ID
+
+The gun stores the name of the camera it expects (e.g. `SindenCamA`) in its own
+memory. Fit a replacement module with a different name (e.g. `SindenCamC`) and
+the Windows/Linux software reports:
+
+> *Cannot find the camera SindenCamA which the lightgun is looking for. This
+> can mean that either the camera module has been swapped... please update the
+> camera ID on the firmware tab*
+
+and then refuses to let you reach the firmware tab - it auto-starts the gun on
+load, fails because the camera name doesn't match, and loops that dialog.
+Start/Stop stay greyed out, so the documented fix is unreachable through the
+GUI.
+
+If you hit this, the camera name can be read and written directly over the
+gun's serial port instead. The protocol is a fixed 7-byte frame
+`AA cmd p1 p2 p3 p4 BB` at 115200 baud:
+
+```
+102  CAMERA_NAME_READ   -> 15 ASCII bytes, space padded
+103  CAMERA_NAME_WRITE  -> AA 67 00 <index> 00 <ascii> BB, one character per frame
+```
+
+```python
+import serial
+s = serial.Serial("/dev/ttyACM0", 115200, timeout=1.5)   # COM5 on Windows
+s.write(bytes([0xAA, 103, 0, 9, 0, ord("C"), 0xBB]))      # write index 9 = 'C'
+s.write(bytes([0xAA, 102, 0, 0, 0, 0, 0xBB]))             # read back
+print(s.read(15))                                         # -> b'SindenCamC     '
+```
+
+Stop the Sinden software and any running driver first, or the port returns
+`EBUSY`. This is unrelated to the X-axis-only kernel issue above - that one is
+a kernel mismatch and affects a freshly-updated MiSTer regardless of the
+camera; this one is specific to a changed camera module and the symptom is a
+software dialog loop, not a tracking fault.
+
+`Tools/gun_serial.py` wraps the above - run it with `--set-camera SindenCamC`
+to do the whole thing in one step, including the read-back check.
+
+### Jittery or pinned tracking after fitting a replacement camera module
+
+A replacement module is not necessarily as bright as the one it replaced, and
+border detection is a flat colour match against `ColourMatchRGB` (default
+`255,255,255`) within `ColourMatchRange` (default `220`, in
+`LightgunMono.exe.config`). `ColourMatchRange` is a per-channel tolerance, so
+at the stock `220` **any pixel with all channels >= 35 counts as white**. With
+a brighter module that can be over half of a 320x240 frame, which makes the
+border impossible to isolate - the driver falls back to its no-lock sentinel
+(`X=32767,Y=32767`) continuously. This can look exactly like dead hardware: no
+tracking, a cursor pinned to one corner, or one axis stuck while the other
+works.
+
+If tracking got worse after a camera swap, lower `ColourMatchRange` until only
+genuinely white pixels match - `60` fully resolved this on one affected unit,
+taking it from no position lock to a 100% lock rate. Enabling
+`MatchOnlyWherePointing` afterwards constrains matching to near the gun's
+current position, which further suppresses the occasional bad frame that
+still gets through at a tight range, and costs less CPU:
+
+| | `ColourMatchRange=220` (stock) | `=60` + `MatchOnlyWherePointing=1` |
+|---|---|---|
+| position stdev (% of screen), holding still | 5.5-6.7% | 2-4% |
+| samples >3000/32767 from median | 3.3% | ~1% |
+| driver CPU | 69% | 49% |
+
+To measure this on your own setup rather than judging by eye, set
+`ConsoleOutputVerbose0to2` to `2` and watch the `X=,Y=` lines the driver
+prints.
+
+`Tools/camtest.py`, run on the MiSTer itself with the driver stopped, tells you
+in a few seconds whether the camera is streaming at all - it talks to V4L2
+directly, bypassing the Sinden driver entirely, which is useful for ruling the
+camera in or out before chasing a driver-side setting:
+
+```shell
+/media/fat/Scripts/SindenLightgunStop.sh
+python3 Tools/camtest.py /dev/video0
+```
 
 ## Special Thanks
 
