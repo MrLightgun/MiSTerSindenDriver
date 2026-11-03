@@ -52,7 +52,7 @@ This guide assumes the user has set up a MiSTer before and can get MiSTer workin
 
 The following configuration has been tested and confirmed to work:
 
-1. Install MiSTer using [MrFusion 2.9](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.9). Any version should work, but 2.9 and 2.7 have been tested.
+1. Install MiSTer using [MrFusion 2.9](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.9). Any version should work, but 2.9 and 2.7 have been tested.  Update November 2026: If using a newer release, the Linux kernel is unlikely to be compatible, an updated kernel was added for version Linux kernel 6.18.38, this is in the Kernel/MiSTerFPGA/MrFusion2.7/ folder, so when you download the files, overwrite zImage_dtb with the newer zImage_dtb-6.18.38 before running the scripts, we are looking at how to make this more dynamic in future so it doesn't matter how you setup your MiSTer.
 1. Ensure your MiSTer is connected to the internet.
 1. Update your MiSTer to the latest version. If using MrFusion:
    - Go to Scripts on the main menu and select "Update". This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs. This can take a while (around 10 mins). Once the process is complete, reboot your MiSTer.
