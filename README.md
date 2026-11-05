@@ -28,7 +28,7 @@ Expect further improvements to the driver in the future.
 
 Having a joypad and a keyboard connected to your MiSTer is recommended during the configuration process, as well as the Sinden Lightgun.
 
-Your Sinden Lightgun needs v1.09 firmware. To update the firmware or check the current firmware version, follow these steps:
+Your Sinden Lightgun needs v1.09 or higher firmware. To update the firmware or check the current firmware version, follow these steps:
 
 1. On Windows, download the latest Windows software from www.sindenlightgun.com.
 1. Connect your lightgun to your PC.
@@ -52,7 +52,7 @@ This guide assumes the user has set up a MiSTer before and can get MiSTer workin
 
 The following configuration has been tested and confirmed to work:
 
-1. Install MiSTer using [MrFusion 2.9](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.9). Any version should work, but 2.9 and 2.7 have been tested.  Update November 2026: If using a newer release, the Linux kernel is unlikely to be compatible, an updated kernel was added for version Linux kernel 6.18.38, this is in the Kernel/MiSTerFPGA/MrFusion2.7/ folder, so when you download the files, overwrite zImage_dtb with the newer zImage_dtb-6.18.38 before running the scripts, we are looking at how to make this more dynamic in future so it doesn't matter how you setup your MiSTer.
+1. Install MiSTer using [MrFusion 2.9](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.9). Any version should work, but 2.9, 2.7 and 2.10 have been tested.
 1. Ensure your MiSTer is connected to the internet.
 1. Update your MiSTer to the latest version. If using MrFusion:
    - Go to Scripts on the main menu and select "Update". This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs. This can take a while (around 10 mins). Once the process is complete, reboot your MiSTer.
@@ -64,7 +64,7 @@ There are two options to install the `Install_SindenLightgunDriver.sh` script:
 1. Download the `Install_SindenLightgunDriver.sh` script from the repository to your computer.
 1. Copy the `Install_SindenLightgunDriver.sh` script to the `Scripts` folder at the root of your MiSTer SD card.
 
-### Option 2: Download the Script Over SSH
+### Option 2: Download the Script Over SSH or use keyboard on console
 
 1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
 1. Connect to the MiSTer device over SSH (Using putty or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
@@ -169,7 +169,7 @@ You can now navigate the menus using the lightgun alone.
 ### 3. Test the lightgun in a core
 
 1. Add NES Duck Hunt to your MiSTer.
-1. Load the `NES_Sinden` core
+1. Load the `NES_Sinden` or `NES_Lightgun` core
 
     >**Important**: The MiSTer loads the first joystick used in a core as Player1. When you first load a core, make sure to use the dpad on the lightgun first. If you use your gamepad first, then the lightgun will become player 2, which can cause problems. For example, the settings don't save correctly in the NES core and in PS1 you can't play Time Crisis because it wants a Player1 lightgun, but Player1 is assigned to the gamepad.
 
@@ -222,7 +222,7 @@ https://github.com/MrLightgun/PSX_MiSTer
 
 Remember to use the lightgun dpad when you first load the core.
 
-The PSX is a slightly more demanding core, and when reading sounds and video of the CD, you can see slowdown if the lightgun driver is using too many resources, so I recommend running the driver with the `medium resource` option for most scenarios. If you don't see any slowdown, then you can try the `low resource` option.
+The PSX is a slightly more demanding core, and when reading sounds and video of the CD, you can see slowdown if the lightgun driver is using too many resources, so I recommend running the driver with the `medium resource` option for most scenarios. If you do see slowdown, then you can try the `low resource` option.
 
 - Set Player1 to Guncon or Justifier depending on what the original lightgun support was.
 - Define the buttons using the lightgun. The input ones are "Gun shoot," which needs to be the trigger, "Gun B" which is good for the rear left side button, and "Gun A" as the front left side button. I don't think the others are required.
@@ -344,14 +344,7 @@ Source code not built and tested, but the existing built core is confirmed to wo
 
 ## Other Cores and Future Development
 
-To come, hopefully:
-
-- Saturn core - I think this still requires lightgun support to be added plus a border
-- Other cores, maybe some of the computer cores; hopefully a future 3DO core would be good
-
-## Updating an Existing Build
-
-There will be some scripts to assist with updating a current build coming soon.
+If there is a new core with generic lightgun support, to add the Sinden border you can do it with simple config changes to sys/ascal.vhd.  Please see the githubs for other cores referenced on this page.
 
 ## Lightgun Settings and Recoil
 
@@ -374,9 +367,7 @@ You shouldn't need to use the MiSTer lightgun calibration tool.
 
 ## Known Issues
 
-Custom kernel had an issue with some (or all) wifi/BT adapters, fixed kernel added 5th July 2024.
-
-An conflict with TapTo was identified due to TapTo and Sinden Lightgun both using serial ports.  The author of TapTo, Wizzo has kindly added an exclusion so that TapTo no longer polls a serial port if it is a Sinden Lightgun in the latest version.  I'm not sure how long this will take to fully propogate to if you have an issue with the lightgun driver not starting properly and have TapTo installed, it would be worth disabling TapTo to make sure that isn't the conflict.  This is probably more likely to affect people that download complete SD cards.  If it is the cause then please download the latest version of TapTo.
+An conflict with TapTo was identified due to TapTo and Sinden Lightgun both using serial ports.  The author of TapTo, Wizzo has kindly added an exclusion so that TapTo no longer polls a serial port if it is a Sinden Lightgun in the latest version.  I'm not sure how long this will take to fully propogate to if you have an issue with the lightgun driver not starting properly and have TapTo installed, it would be worth disabling TapTo to make sure that isn't the conflict.  This is probably more likely to affect people that download complete SD cards.  If it is the cause then please download the latest version of TapTo.  Sinden Lightgun firmware has also since been updated and should prevent this issue too.  
 
 If you find that the lightgun is only moving on the X-axis, this is probably because you have updated the MiSTer binary after installing the Sinden driver.  To fix, re-run Setup_SindenLightgunDriver.sh, you can find this in the Sinden folder within Scripts.  You may need to manually reboot afterwards.
 
@@ -463,7 +454,7 @@ python3 Tools/camtest.py /dev/video0
 
 ## Special Thanks
 
-This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson, who assisted with the development and setup, and Wiggy from the Sinden Lightgun Discord, who helped push to make it happen and assisted with the scripts and testing.  Additional thanks to Matt_RetroGamer from the Sinden Lightgun discord who helped make the scripts run so much better for easier installation.
+This project to add Sinden Lightgun support owes a huge debt of gratitude to Nolan Nicholson, who assisted with the development and setup, and Wiggy from the Sinden Lightgun Discord, who helped push to make it happen and assisted with the scripts and testing.  Additional thanks to Matt_RetroGamer from the Sinden Lightgun discord who helped make the scripts run so much better for easier installation.  Flandango from the MiSTerFPGA forum for helping to compile the updated MiSTer kernel with USB video support.  Lukabratzee for helping fix the profiles so the lightgun worked in the menus without needing to be manually configured.  Terminator2k2 for adding some additional cores.
 
 ## Note
 
