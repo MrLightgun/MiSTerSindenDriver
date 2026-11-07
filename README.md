@@ -52,22 +52,34 @@ This guide assumes the user has set up a MiSTer before and can get MiSTer workin
 
 The following configuration has been tested and confirmed to work:
 
-1. Install MiSTer using [MrFusion 2.9](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.9). Any version should work, but 2.9, 2.7 and 2.10 have been tested.
+1. Install MiSTer using [MrFusion 2.9](https://github.com/MiSTer-devel/mr-fusion/releases/tag/v2.9). Any version should work, but 2.9, 2.7 and 2.10 have been tested.  Other MiSTer setups should work as long as on the latest version of the MiSTer files.
 1. Ensure your MiSTer is connected to the internet.
 1. Update your MiSTer to the latest version. If using MrFusion:
    - Go to Scripts on the main menu and select "Update". This will add all the cores you need for non-lightgun gaming and includes the folders to put your ROMs. This can take a while (around 10 mins). Once the process is complete, reboot your MiSTer.
 
-There are two options to install the `Install_SindenLightgunDriver.sh` script:
+There are three options to install the `Install_SindenLightgunDriver.sh` script:
 
 ### Option 1: Copy the Script to the SD Card
 
 1. Download the `Install_SindenLightgunDriver.sh` script from the repository to your computer.
 1. Copy the `Install_SindenLightgunDriver.sh` script to the `Scripts` folder at the root of your MiSTer SD card.
 
-### Option 2: Download the Script Over SSH or use keyboard on console
+### Option 2: Use keyboard on the console
+
+Connect keyboard to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
+1. The username is `root` and the password is `1` on MiSTer mainline.
+1. Navigate to the `Scripts` directory:
+   ```shell
+   cd /media/fat/Scripts
+   ```
+1. Download the `Install_SindenLightgunDriver.sh` script directly to your MiSTer using `wget`:
+   ```shell
+   wget https://raw.githubusercontent.com/MrLightgun/MiSTerSindenDriver/main/Install_SindenLightgunDriver.sh
+   ```
+### Option 3: Download the Script Over SSH
 
 1. Find out your MiSTer IP address (Available on the main settings menu) and note it down.
-1. Connect to the MiSTer device over SSH (Using putty or your SSH client of choice) or, if you have a keyboard connected to the MiSTer, you can load the console on the device by pressing F9 on the keyboard.
+1. Connect to the MiSTer device over SSH (Using putty or your SSH client of choice).
 1. The username is `root` and the password is `1` on MiSTer mainline.
 1. Navigate to the `Scripts` directory:
    ```shell
@@ -83,7 +95,7 @@ There are two options to install the `Install_SindenLightgunDriver.sh` script:
 1. From the MiSTer main menu, go to Scripts and select `Install_SindenLightgunDriver.sh`. This will execute the script and install the necessary files.
 1. Reboot MiSTer after the script has successfully completed.
 
-## Updating to the Latest Version
+## Updating to the Latest Version (if previously installed)
 
 To update your existing MiSTerSindenDriver setup to the latest version, follow these steps:
 
@@ -107,7 +119,16 @@ To remove the Sinden Lightgun driver and associated files from your MiSTer setup
 
 There are multiple steps for getting lightguns to work in MiSTer, make sure to follow the steps in order:
 
-### 1. Run the lightgun driver
+### 1. Auto-running the lightgun driver on boot
+
+The latest versions of this installation now auto run the driver on boot using default/medium resources.  You can change this by editing:
+'/media/fat/linux/user-startup.sh'
+
+You can change the level of resources it uses or disable the auto start by editing the file.  If you want to change resources you can select SindenLightgunStop.sh in the scripts on the main menu and then select one of the start commands with your desired resources level.
+
+### 2. Manually Run the lightgun driver
+
+Assuming you have disabled the auto run.
 
 Go to scripts on the MiSTer main menu, navigate to `/media/fat/Scripts` and select `SindenLightgunStart_Default.sh`. Click a button on your gamepad after it has started up.
 
@@ -130,42 +151,7 @@ Or, if you prefer to run it manually from the shell console, use the following c
    ```shell
    /media/fat/Scripts/SindenLightgunStart_MaxResource.sh
    ```
-
-### 2. Setup lightgun as a MiSTer menu device
-
-Setting up the lightgun as a MiSTer menu device enables the cores to see it.
-
-> **Important** : THIS STEP IS NOW HANDLED BY THE SETUP SCRIPT, THESE NOTES ARE HERE FOR REFERENCE
-
-> **Important** : I tested all the recent updates (MrLightgun) and I did still need to do this step, trying to work out why, so if you are having difficulties then consider to do this step.
-
-> **Update**: found the reason this step was still needed. MiSTer uses two
-> different input maps per device - a core-specific one for in-game controls,
-> and a separate generic one (`input_<vid>_<pid>_v3.map`, no core name prefix)
-> that drives every menu and OSD, including "Define joystick buttons" itself.
-> The setup script copied the 44 core-specific maps but never the generic one,
-> so the gun had no menu map until you manually built one through Define
-> joystick buttons. The generic maps are now shipped in `Config/inputs/` for
-> all four Sinden PIDs, so this manual step should no longer be necessary -
-> leaving the instructions below for anyone who wants different menu buttons,
-> or is troubleshooting an older install.
-
-1. Scroll through MiSTer settings, using your gamepad access System Settings -> Define joystick buttons.
-1. When it prompts for the `DPAD Test: Press Right`, push right on Sinden Lightgun directional pad.
-1. Press the space bar on the keyboard to skip all the tilt settings.
-1. Assign Right/Left/Down/Up to Lightgun dpad.
-1. Use the keyboard space bar to skip A, B, X, Y, L, R, Select.
-1. Assign Start to the front left button.
-1. Skip mouse-related prompts with the spacebar.
-1. Assign the Menu action to Pump Action or a different button of your choice.
-1. Assign Menu OK to the front right button on the lightgun.
-1. Assign Menu Back to the back right button on the lightgun.
-1. Skip others with the spacebar.
-
-Important: Don't wave the lightgun around while doing the above, as the movement of the lightgun can be assigned as actions.
-
-You can now navigate the menus using the lightgun alone.
-
+   
 ### 3. Test the lightgun in a core
 
 1. Add NES Duck Hunt to your MiSTer.
@@ -357,7 +343,7 @@ nano /media/fat/Scripts/Sinden/MiSTerSindenDriver-main/LightgunDriver/LightgunMo
 To save: ctrl+o
 To exit: ctrl+x
 
-Recommend beginners only changing lightgun camera exposure, brightness, and contrast.
+Recommend beginners only change lightgun camera exposure, brightness, and contrast.  If using a projector or CRT recommend increasing the exposure.  The default is likely to be 78, so would recommend trying 156 or 312, leave blank to return to the default.
 
 ## Sinden Lightgun Calibration
 
@@ -371,7 +357,16 @@ An conflict with TapTo was identified due to TapTo and Sinden Lightgun both usin
 
 If you find that the lightgun is only moving on the X-axis, this is probably because you have updated the MiSTer binary after installing the Sinden driver.  To fix, re-run Setup_SindenLightgunDriver.sh, you can find this in the Sinden folder within Scripts.  You may need to manually reboot afterwards.
 
+## MiSTer updates breaking
+
+For this version of the software to work it requires USB video support in the Linux Kernel which is disabled by default on the MiSTer.  So this installation script installs a custom version, you can see the changes required in the kernel for supporting Sinden Lightgun here:
+https://github.com/MrLightgun/Linux-Kernel_MiSTer
+
+If a new linux MiSTer kernel is released without a customized kernel then recommend contacting Sinden support and asking them to release an updated kernel with updated changes or finding a kind volunteer to build an updated kernel in with these changes in the above github.
+
 ### Replaced the camera module? The Sinden software won't let you set the new ID
+
+(This shouldn't happen but if it does, a work around is below).
 
 The gun stores the name of the camera it expects (e.g. `SindenCamA`) in its own
 memory. Fit a replacement module with a different name (e.g. `SindenCamC`) and
